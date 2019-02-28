@@ -1,0 +1,45 @@
+@font-face{
+    font-family: 'Yi Baiti';
+    src: url(fonts/msyi.ttf);
+}
+
+body{
+    font-family: 'Yi Baiti';
+    margin: 0;
+    display: flex;
+    font-weight: lighter;
+    background-image: url("../images/53233294_374744263078341_18310901576761344_n.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+a{text-decoration: none;
+    color: white;    
+}
+
+h1{
+    font-size: 3.5rem;
+    font-weight: lighter;
+    margin: 0;
+}
+
+h2{
+    color: white;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+h4{
+    color: white;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: lighter;
+
+}
+
+p{  
+    color: black;
+    margin: 0;
+}

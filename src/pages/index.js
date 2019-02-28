@@ -1,21 +1,69 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import Link from 'gatsby-link'
+import Img from "gatsby-image"
+import classNames from 'classnames';
 
+import index from "../styles/index.module.scss"
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const BlogPost = ({node}) => {
+    return (
+        <Link to={node.slug}>
+        <div className={classNames({[index['hvr-grow']]: true, [index.articletab]:true})}>
+            <h2>{node.title}</h2>
+            <h4>{node.createdAt}</h4>
+            <div>
+                <div>
+                    {/* <Img resolutions={node.featuredImage.resolutions}/> */}
+                </div>
+                {/* <div>{node.content.childMarkdownRemark.excerpt}</div> */}
+            </div>
+        </div>
+        </Link>
+    )
+}
+
+const IndexPage = (props) => {
+    console.log(props)
+    return (
+            <Layout>
+                <div id={index.blogPostsLayout}>
+                    {props.data.allContentfulBlog.edges.map((edge) => <BlogPost key={edge.node.id} node={edge.node} />)}
+                </div>
+            </Layout>
+    )
+}
 
 export default IndexPage
+
+export const pageQuery = graphql`
+    query pageQuery {
+        allContentfulBlog(
+            filter: {
+                node_locale: {eq: "en-US"}
+            },
+            sort: {
+                fields: [createdAt], order: DESC
+            }
+        ) {
+            edges {
+                node {
+                    id
+                    title
+                    slug
+                    createdAt(formatString: "MMMM DD, YYYY")
+                    featuredImage {
+                        resolutions(width: 200) {
+                            ...GatsbyContentfulResolutions
+                        }
+                    }
+                    content {
+                        childMarkdownRemark {
+                            excerpt
+                        }
+                    }
+                }
+            }
+        }
+    }
+`

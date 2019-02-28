@@ -1,11 +1,27 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `^rtem`,
+    description: `Blog for Big Ideas`,
+    author: `Artem Biyun`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        cssLoaderOptions: {
+          camelCase: false,
+        },
+      },
+    },
     `gatsby-plugin-react-helmet`,
+    'gatsby-transformer-remark',
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+          spaceId: `bm4aw3lrvsoi`,
+          accessToken: `a02f690b213a26f1af71d08b0f8b7b4562bc32d784322b385b224bcf456f1f6f`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -24,7 +40,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/a-icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
