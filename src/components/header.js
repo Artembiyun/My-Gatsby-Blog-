@@ -17,7 +17,8 @@ const Header = ({ siteTitle }) => (
     </div>
     <div className={header.subheading}>
       <h4>
-        Dedicated to the future
+        Web Dev Blog <br/>
+         For the Future
       </h4>
     </div>
     <div className={header.menubox}>
