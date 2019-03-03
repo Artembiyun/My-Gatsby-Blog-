@@ -18,7 +18,6 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <div id="main">
-        {console.log(...props)}
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
