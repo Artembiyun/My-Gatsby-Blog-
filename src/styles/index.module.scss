@@ -67,3 +67,9 @@
   ::-webkit-scrollbar-thumb:hover {
     background:  rgb(204, 73, 73); 
   }
+
+  @media (max-width: 600px){
+    #blogPostsLayout{
+        display: none;
+    }
+  }

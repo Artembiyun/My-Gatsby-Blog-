@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-require ('../styles/layout.css')
+require ('../styles/layout.scss')
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -17,7 +17,8 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <div style={{display: 'flex'}}>
+      <div id="main">
+        {console.log(...props)}
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{

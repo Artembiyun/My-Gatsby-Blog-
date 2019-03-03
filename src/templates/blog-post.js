@@ -8,7 +8,7 @@ class BlogPost extends Component {
     render() {
         const { title, createdAt, featuredImage, content } = this.props.data.contentfulBlog
         return (
-        <Layout>
+        <Layout minlayout={true}>
             <div id={blogpost.content}>
                 <div id={blogpost.content__main}>
                 <div id={blogpost.content__main__centered}>
