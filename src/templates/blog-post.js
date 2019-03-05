@@ -28,7 +28,7 @@ class BlogPost extends Component {
                         <p>{createdAt}</p>
                         <p id={blogpost.articleText}>
                             <div dangerouslySetInnerHTML={{__html:content.childMarkdownRemark.html}} />
-                            <div dangerouslySetInnerHTML={{__html:document}} />
+                            {/* <div dangerouslySetInnerHTML={{__html:document}} /> */}
                         </p>
                     </div>
                 </div>
