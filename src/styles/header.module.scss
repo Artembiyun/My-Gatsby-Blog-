@@ -53,8 +53,34 @@
     }
 }
 
-@media (max-width: 600px){
+@media (max-width: 1000px){
     #sidebar{
+        position: absolute;
+        z-index: 99;
         width: 100vw;
+        height:80px;
+        flex-direction: row;
+    }
+
+    .title{
+        padding: 0 0 0 6vw;
+    }
+
+    .subheading{
+       display: none;
+    }
+
+    #angle{
+        top:-125px;
+    }
+    .menubox{
+        width: 60vw;
+        padding: 0 0 0 15vw;
+        height: 80px;
+        flex-direction: row;
+        &__item{
+            line-height: 80px;
+            height: 80px;
+        }
     }
 }

@@ -4,6 +4,7 @@ module.exports = {
     description: `Blog for Big Ideas`,
     author: `Artem Biyun`,
   },
+  plugins: [`@contentful/gatsby-transformer-contentful-richtext`],
   plugins: [
     {
       resolve: `gatsby-plugin-sass`,

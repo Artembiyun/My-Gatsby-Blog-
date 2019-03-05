@@ -68,8 +68,8 @@
     background:  rgb(204, 73, 73); 
   }
 
-  @media (max-width: 600px){
+  @media (max-width: 1000px){
     #blogPostsLayout{
-        display: none;
+        width: 100vw;
     }
   }

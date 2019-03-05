@@ -7,7 +7,7 @@ body{
     font-family: 'Yi Baiti';
     margin: 0;
     display: flex;
-    font-weight: lighter;
+    font-weight: light;
     background-image: url("../images/53233294_374744263078341_18310901576761344_n.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -25,6 +25,7 @@ a{text-decoration: none;
 h1{
     font-size: 3.5rem;
     font-weight: lighter;
+    padding-bottom: 20px;
     margin: 0;
 }
 
@@ -48,8 +49,9 @@ p{
     margin: 0;
 }
 
-@media (max-width: 600px){
+@media (max-width: 1000px){
     #main{
+        height: 100vh;
         flex-direction: column;
     }
 }
