@@ -15,6 +15,7 @@
     "gatsby-plugin-offline": "^2.0.23",
     "gatsby-plugin-page-load-delay": "^0.1.2",
     "gatsby-plugin-react-helmet": "^3.0.6",
+    "gatsby-plugin-react-svg": "^2.1.0",
     "gatsby-plugin-sass": "^2.0.10",
     "gatsby-plugin-sharp": "^2.0.20",
     "gatsby-source-contentful": "^2.0.29",
@@ -45,5 +46,8 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "devDependencies": {
+    "svg-react-loader": "^0.4.6"
   }
 }

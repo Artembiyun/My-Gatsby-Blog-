@@ -12,12 +12,6 @@ const BlogPost = ({node}) => {
         <div className={classNames({[index['hvr-grow']]: true, [index.articletab]:true})}>
             <h2>{node.title}</h2>
             <h4>{node.createdAt}</h4>
-            <div>
-                <div>
-                    {/* <Img resolutions={node.featuredImage.resolutions}/> */}
-                </div>
-                {/* <div>{node.content.childMarkdownRemark.excerpt}</div> */}
-            </div>
         </div>
         </Link>
     )

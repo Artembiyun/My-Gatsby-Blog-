@@ -15,7 +15,30 @@ const About = (pageQuery) => (
           {pageQuery.data.allContentfulAbout.edges.map((edges) =>
             <div id={blogpost.content__main__centered}>
               <div className={blogpost['image-section']}>
-                  <Img resolutions={edges.node.headerImage.resolutions}/>
+                <div className={blogpost['about-box']}>
+                  <div className={blogpost['about-box__header-container']}>
+                    <Img sizes={edges.node.headerImage.sizes}/>
+                  </div>
+                  <div className={blogpost['about-box__header-container']}>
+                    <h2 style={{color: 'black'}}>
+                      E: artembiyun@live.ca                
+                    </h2>
+                    <h2 style={{color: 'black'}}>
+                      P: 416-938-1115                
+                    </h2>
+                      <div className={blogpost.socmedia}>
+                        <a href='https://www.facebook.com/profile.php?id=100008391877805'>
+                          <img src={require('../images/icons/fb-icon.svg')}/>
+                        </a>
+                        <a href='https://www.instagram.com/senior_artyom/'>
+                          <img src={require('../images/icons/instagram-icon.svg')}/>
+                        </a>
+                        <a href='https://www.linkedin.com/in/artembiyun/'>
+                          <img src={require('../images/icons/linkedin-icon.svg')} alt="Linkedin Profile"/>
+                        </a>
+                      </div>
+                  </div>
+                </div>
               </div>
               <h1 style={{
                             paddingTop: '0.8rem',
@@ -51,8 +74,8 @@ export const pageQuery = graphql`
                   }
               }
               headerImage {
-                resolutions(width: 400) {
-                    ...GatsbyContentfulResolutions
+                sizes(maxWidth: 600) {
+                    ...GatsbyContentfulSizes
                 }
               }
           }

@@ -21,6 +21,26 @@
     }
 }
 
+.about-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+        &__header-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 300px;
+        }
+}
+
+.socmedia{
+    margin: 15px 0 0 0;
+    width: 150px;
+    display: flex;
+    justify-content: space-around;
+}
+
 .blacktext{
     color:black;
 }
@@ -34,5 +54,10 @@
 @media (max-width: 1000px){
     #content{
         width: 100vw;
+        &__main{
+            &__centered{
+                width: auto;
+            }
+        }
     }
 }

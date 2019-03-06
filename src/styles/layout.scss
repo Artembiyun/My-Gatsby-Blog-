@@ -24,7 +24,7 @@ a{text-decoration: none;
 
 h1{
     font-size: 3.5rem;
-    font-weight: lighter;
+    font-weight: bold;
     padding-bottom: 20px;
     margin: 0;
 }
@@ -47,6 +47,7 @@ h4{
 p{  
     color: black;
     margin: 0;
+    font-weight: 600;
 }
 
 @media (max-width: 1000px){

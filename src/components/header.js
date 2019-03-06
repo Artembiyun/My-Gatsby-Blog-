@@ -9,7 +9,9 @@ const Header = ({ siteTitle }) => (
   <div id={header.angle}>
   </div>
     <div className={header.title}>
-      <h1>
+      <h1 style={{
+          fontWeight:'lighter'
+          }}>
         <Link to="/">
           {siteTitle}
         </Link>
