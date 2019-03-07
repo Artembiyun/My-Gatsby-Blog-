@@ -6,7 +6,6 @@
     align-items: center;
     height: 150px;
     width: calc(100vw - 250px);
-    background-color: rgba(0, 0, 0, 0.192);
     overflow-x: auto;
 }
 
@@ -102,7 +101,7 @@
       display: none;
     }
     #intro-card{
-      background-color: white;
+      background-color: rgb(204, 73, 73);
       margin-left: 2vw;
       width: auto;
     }

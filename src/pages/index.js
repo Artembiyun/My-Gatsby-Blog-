@@ -21,9 +21,9 @@ const IndexPage = (props) => {
     return (
             <Layout>
                 <div id={index['intro-card']}>
-                    <h1>
-                        ^rtem
-                    </h1>
+                    <h2>
+                        Artem Biyun
+                    </h2>
                     <h3>Front-end web development</h3>
                     <h3>   React \ Node \ Angular \ </h3>
                     <h3> Javascript \ Scss \ HTML</h3>
