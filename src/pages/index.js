@@ -6,25 +6,25 @@ import classNames from 'classnames';
 import index from "../styles/index.module.scss"
 import Layout from "../components/layout"
 
-const BlogPost = ({node}) => {
-    return (
-        <Link to={node.slug}>
-        <div className={classNames({[index['hvr-grow']]: true, [index.articletab]:true})}>
-            <h3>{node.title}</h3>
-            <h4>{node.createdAt}</h4>
-        </div>
-        </Link>
-    )
-}
+// const BlogPost = ({node}) => {
+//     return (
+//         <Link to={node.slug}>
+//         <div className={classNames({[index['hvr-grow']]: true, [index.articletab]:true})}>
+//             <h3>{node.title}</h3>
+//             <h4>{node.createdAt}</h4>
+//         </div>
+//         </Link>
+//     )
+// }
 
 const IndexPage = (props) => {
     return (
             <Layout>
                 <div id={index['intro-card']}>
-                    <h2>
+                    <h1 style={{color:'black'}}>
                         Artem Biyun
-                    </h2>
-                    <h3>Front-end web development</h3>
+                    </h1>
+                    <h3>Front-end web developer</h3>
                     <h3>   React \ Node \ Angular \ </h3>
                     <h3> Javascript \ Scss \ HTML</h3>
                 </div>
@@ -34,9 +34,9 @@ const IndexPage = (props) => {
                     </h5>
                     <div id={index['text-bubble__rounded']}/> */}
                 {/* </div> */}
-                <div id={index.blogPostsLayout}>
+                 {/* <div id={index.blogPostsLayout}>
                     {props.data.allContentfulBlog.edges.map((edge) => <BlogPost key={edge.node.id} node={edge.node} />)}
-                </div>
+                </div> */}
             </Layout>
     )
 }

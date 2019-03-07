@@ -17,7 +17,7 @@ const About = (pageQuery) => (
               <div className={blogpost['image-section']}>
                 <div className={blogpost['about-box']}>
                   <div className={blogpost['about-box__header-container']}>
-                    <Img sizes={edges.node.headerImage.sizes}/>
+                    <Img resolutions={edges.node.headerImage.resolutions}/>
                   </div>
                   <div className={blogpost['about-box__header-container']}>
                     <h3 style={{color: 'black'}}>
@@ -40,12 +40,13 @@ const About = (pageQuery) => (
                   </div>
                 </div>
               </div>
-              <h1 style={{
+              <h2 style={{  textAlign:'center',
+                            color: 'black',
                             paddingTop: '0.8rem',
                             paddingBottom: '0.5rem'
                         }}>
                   {edges.node.title}
-                </h1>
+                </h2>
                 <p id={blogpost.articleText}>
                   <div dangerouslySetInnerHTML={{__html:edges.node.content.childMarkdownRemark.html}} />
                 </p>
@@ -74,8 +75,8 @@ export const pageQuery = graphql`
                   }
               }
               headerImage {
-                sizes(maxWidth: 600) {
-                    ...GatsbyContentfulSizes
+                resolutions(width: 600) {
+                    ...GatsbyContentfulResolutions
                 }
               }
           }

@@ -10,7 +10,7 @@ body{
     font-weight: light;
     background-image: url("../images/53233294_374744263078341_18310901576761344_n.jpg");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: 200px 0px;
     background-size: cover;
 }
 
@@ -23,7 +23,7 @@ a{text-decoration: none;
 }
 
 h1{
-    font-size: 8rem;
+    font-size: 6rem;
     font-weight: lighter;
     padding-bottom: 5px;
     margin: 0;
@@ -67,5 +67,8 @@ p{
     #main{
         height: 100vh;
         flex-direction: column;
+    }
+    body{
+        background-position: center;
     }
 }
