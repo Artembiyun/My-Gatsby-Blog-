@@ -15,9 +15,7 @@ const About = (pageQuery) => (
           {pageQuery.data.allContentfulAbout.edges.map((edges) =>
             <div id={blogpost.about}>
                 <div className={blogpost['about-box']}>
-                  <div className={blogpost['about-box__header-container']}>
-                    <Img resolutions={edges.node.headerImage.resolutions}/>
-                  </div>
+                    <Img sizes={edges.node.headerImage.sizes} style={{width:'60%', borderRadius: '200px'}}/>
                   <div className={blogpost['about-box__header-container']}>
                     <h3 style={{color: 'black'}}>
                       E: artembiyun@live.ca                
@@ -75,8 +73,8 @@ export const pageQuery = graphql`
                   }
               }
               headerImage {
-                resolutions(width: 400) {
-                    ...GatsbyContentfulResolutions
+                sizes(maxWidth: 400) {
+                    ...GatsbyContentfulSizes
                 }
               }
           }
