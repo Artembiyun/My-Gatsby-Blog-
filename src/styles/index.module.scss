@@ -32,28 +32,28 @@
     padding: 25px;
 }
 
-#text-bubble{
-  background-color: white;
-  width: 400px;
-  height: 100px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 12px;
+// #text-bubble{
+//   background-color: white;
+//   width: 400px;
+//   height: 100px;
+//   position: absolute;
+//   right: 20px;
+//   top: 20px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+//   padding: 12px;
 
-  &__rounded{
-    width: 150px;
-    height: 80px;
-    border-radius: 150px;
-    background-image: url("../images/rounded.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-}
+//   &__rounded{
+//     width: 150px;
+//     height: 80px;
+//     border-radius: 150px;
+//     background-image: url("../images/rounded.png");
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     background-size: cover;
+//   }
+// }
 
 /* Grow */
 .hvr-grow {

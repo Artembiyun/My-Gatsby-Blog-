@@ -28,11 +28,11 @@ const IndexPage = (props) => {
                     <h3>   React \ Node \ Angular \ </h3>
                     <h3> Javascript \ Scss \ HTML</h3>
                 </div>
-                <div id={index['text-bubble']}>
+                {/* <div id={index['text-bubble']}>
                     <h5>
                         "Hello and welcome to a very strange web development blog"
                     </h5>
-                    <div id={index['text-bubble__rounded']}/>
+                    <div id={index['text-bubble__rounded']}/> */}
                 </div>
                 <div id={index.blogPostsLayout}>
                     {props.data.allContentfulBlog.edges.map((edge) => <BlogPost key={edge.node.id} node={edge.node} />)}
