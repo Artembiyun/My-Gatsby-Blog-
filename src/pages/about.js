@@ -13,8 +13,7 @@ const About = (pageQuery) => (
       <div id={blogpost.content}>
         <div id={blogpost.content__main}>
           {pageQuery.data.allContentfulAbout.edges.map((edges) =>
-            <div id={blogpost.content__main__centered}>
-              <div className={blogpost['image-section']}>
+            <div id={blogpost.about}>
                 <div className={blogpost['about-box']}>
                   <div className={blogpost['about-box__header-container']}>
                     <Img resolutions={edges.node.headerImage.resolutions}/>
@@ -39,7 +38,7 @@ const About = (pageQuery) => (
                       </div>
                   </div>
                 </div>
-              </div>
+                <div>
               <h2 style={{  textAlign:'center',
                             color: 'black',
                             paddingTop: '0.8rem',
@@ -47,10 +46,11 @@ const About = (pageQuery) => (
                         }}>
                   {edges.node.title}
                 </h2>
-                <p id={blogpost.articleText}>
+                <p id={blogpost.abouttext}>
                   <div dangerouslySetInnerHTML={{__html:edges.node.content.childMarkdownRemark.html}} />
                 </p>
-            </div>  
+                </div>
+            </div>
           )}
         </div>
       </div>
@@ -75,7 +75,7 @@ export const pageQuery = graphql`
                   }
               }
               headerImage {
-                resolutions(width: 600) {
+                resolutions(width: 400) {
                     ...GatsbyContentfulResolutions
                 }
               }
