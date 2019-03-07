@@ -33,7 +33,7 @@ const IndexPage = (props) => {
                         "Hello and welcome to a very strange web development blog"
                     </h5>
                     <div id={index['text-bubble__rounded']}/> */}
-                </div>
+                {/* </div> */}
                 <div id={index.blogPostsLayout}>
                     {props.data.allContentfulBlog.edges.map((edge) => <BlogPost key={edge.node.id} node={edge.node} />)}
                 </div>
