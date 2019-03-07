@@ -15,7 +15,7 @@ const About = (pageQuery) => (
           {pageQuery.data.allContentfulAbout.edges.map((edges) =>
             <div id={blogpost.about}>
                 <div className={blogpost['about-box']}>
-                    <Img sizes={edges.node.headerImage.sizes} style={{width:'60%', borderRadius: '200px'}}/>
+                    <Img sizes={edges.node.headerImage.sizes} style={{width:'300px', borderRadius: '200px'}}/>
                   <div className={blogpost['about-box__header-container']}>
                     <h3 style={{color: 'black'}}>
                       E: artembiyun@live.ca                
