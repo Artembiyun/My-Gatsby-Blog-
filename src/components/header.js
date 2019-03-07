@@ -9,13 +9,11 @@ const Header = ({ siteTitle }) => (
   <div id={header.angle}>
   </div>
     <div className={header.title}>
-      <h1 style={{
-          fontWeight:'lighter'
-          }}>
+      <h2>
         <Link to="/">
           {siteTitle}
         </Link>
-      </h1>
+      </h2>
     </div>
     <div className={header.subheading}>
       <h4>
@@ -25,18 +23,18 @@ const Header = ({ siteTitle }) => (
     </div>
     <div className={header.menubox}>
       <div className={header.menubox__item}>
-        <h2>
+        <h3>
           <Link to="/articles">
             Blog
           </Link>
-        </h2>
+        </h3>
       </div>
       <div className={header.menubox__item}>
-        <h2>
+        <h3>
           <Link to="/about">
             About
           </Link>
-        </h2>
+        </h3>
       </div>
       </div>
   </header>

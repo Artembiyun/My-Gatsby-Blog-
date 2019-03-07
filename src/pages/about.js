@@ -20,12 +20,12 @@ const About = (pageQuery) => (
                     <Img sizes={edges.node.headerImage.sizes}/>
                   </div>
                   <div className={blogpost['about-box__header-container']}>
-                    <h2 style={{color: 'black'}}>
+                    <h3 style={{color: 'black'}}>
                       E: artembiyun@live.ca                
-                    </h2>
-                    <h2 style={{color: 'black'}}>
+                    </h3>
+                    <h3 style={{color: 'black'}}>
                       P: 416-938-1115                
-                    </h2>
+                    </h3>
                       <div className={blogpost.socmedia}>
                         <a href='https://www.facebook.com/profile.php?id=100008391877805'>
                           <img src={require('../images/icons/fb-icon.svg')}/>

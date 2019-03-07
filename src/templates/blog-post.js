@@ -19,12 +19,13 @@ class BlogPost extends Component {
                 <div id={blogpost.content__main}>
                     <div id={blogpost.content__main__centered}>
                         <Img sizes={featuredImage.sizes}/>
-                        <h1 style={{
+                        <h2 style={{
+                            color: 'black',
                             paddingTop: '0.8rem',
                             paddingBottom: '0.5rem'
                         }}>
                             {title}
-                        </h1>
+                        </h2>
                         <p>{createdAt}</p>
                         <p id={blogpost.articleText}>
                             <div dangerouslySetInnerHTML={{__html:content.childMarkdownRemark.html}} />

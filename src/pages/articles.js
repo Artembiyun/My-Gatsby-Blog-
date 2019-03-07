@@ -17,9 +17,9 @@ class Blogpage extends Component {
           {this.props.data.allContentfulBlog.edges.map((edges) =>
             <div id={blogpost.content__main__centered}>
               <Img sizes={edges.node.featuredImage.sizes}/>
-              <h1>
+              <h2 style={{color: 'black'}}>
                 <Link to={edges.node.slug} className={blogpost.blacktext}>{edges.node.title}</Link>
-              </h1>
+              </h2>
               <p>
                 {edges.node.createdAt}
               </p>

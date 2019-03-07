@@ -10,7 +10,7 @@ const BlogPost = ({node}) => {
     return (
         <Link to={node.slug}>
         <div className={classNames({[index['hvr-grow']]: true, [index.articletab]:true})}>
-            <h2>{node.title}</h2>
+            <h3>{node.title}</h3>
             <h4>{node.createdAt}</h4>
         </div>
         </Link>
@@ -18,9 +18,22 @@ const BlogPost = ({node}) => {
 }
 
 const IndexPage = (props) => {
-    console.log(props)
     return (
             <Layout>
+                <div id={index['intro-card']}>
+                    <h1>
+                        ^rtem
+                    </h1>
+                    <h3>Front-end web development</h3>
+                    <h3>   React \ Node \ Angular \ </h3>
+                    <h3> Javascript \ Scss \ HTML</h3>
+                </div>
+                <div id={index['text-bubble']}>
+                    <h5>
+                        "Hello and welcome to a very strange web development blog"
+                    </h5>
+                    <div id={index['text-bubble__rounded']}/>
+                </div>
                 <div id={index.blogPostsLayout}>
                     {props.data.allContentfulBlog.edges.map((edge) => <BlogPost key={edge.node.id} node={edge.node} />)}
                 </div>
