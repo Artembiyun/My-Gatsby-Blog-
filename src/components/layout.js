@@ -28,8 +28,6 @@ const Layout = ({ children }) => (
           }}
         >
           <main>{children}</main>
-          <footer>
-          </footer>
         </div>
       </div>
     )}

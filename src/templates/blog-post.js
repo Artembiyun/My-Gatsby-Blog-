@@ -3,16 +3,14 @@ import React, { Component } from 'react'
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import blogpost from "../styles/blog-post.module.scss"
-import { BLOCKS } from '@contentful/rich-text-types';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 class BlogPost extends Component {
     render() {
-        // const document = JSON.parse(this.props.data.contentfulBlog.richContent.richContent);
-        // console.log(documentToReactComponents(document));
-        // console.log(document)
+        const document = JSON.parse(this.props.data.contentfulBlog.richContent.richContent);
+        const blogPost = documentToHtmlString(document);
 
-        const { title, createdAt, featuredImage, content } = this.props.data.contentfulBlog;
+        const { title, createdAt, featuredImage} = this.props.data.contentfulBlog;
         return (
         <Layout minlayout={true}>
             <div id={blogpost.content}>
@@ -27,10 +25,7 @@ class BlogPost extends Component {
                             {title}
                         </h2>
                         <p>{createdAt}</p>
-                        <p id={blogpost.articleText}>
-                            <div dangerouslySetInnerHTML={{__html:content.childMarkdownRemark.html}} />
-                            {/* <div dangerouslySetInnerHTML={{__html:document}} /> */}
-                        </p>
+                        <div dangerouslySetInnerHTML={{__html:blogPost}} />
                     </div>
                 </div>
             </div>

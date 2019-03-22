@@ -21,7 +21,8 @@
 }
 
 #intro-card{
-    position: absolute;
+    z-index: 2;
+    position: fixed;
     top: 20vh;
     left: calc(10vw + 250px);
     display: flex;
@@ -31,30 +32,8 @@
     text-align: center;
     width: 450px;
     height: 180px;
+    border: solid 1px black;
 }
-
-// #text-bubble{
-//   background-color: white;
-//   width: 400px;
-//   height: 100px;
-//   position: absolute;
-//   right: 20px;
-//   top: 20px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-around;
-//   padding: 12px;
-
-//   &__rounded{
-//     width: 150px;
-//     height: 80px;
-//     border-radius: 150px;
-//     background-image: url("../images/rounded.png");
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: cover;
-//   }
-// }
 
 /* Grow */
 .hvr-grow {
@@ -104,7 +83,7 @@
     #intro-card{
       background-color: white;
       height: 190px;
-      padding: 10px 0 10px 0;
+      padding: 10px 0 20px 0;
       left: 0;
       top: 40vh;
       width: 100vw;

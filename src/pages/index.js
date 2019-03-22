@@ -1,43 +1,31 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import Img from "gatsby-image"
-import classNames from 'classnames';
+import Helmet from 'react-helmet';
 
 import index from "../styles/index.module.scss"
+import Paralax1 from "./paralax1"
+import Paralax2 from "./paralax2"
+import Paralax3 from "./paralax3"
 import Layout from "../components/layout"
-
-// const BlogPost = ({node}) => {
-//     return (
-//         <Link to={node.slug}>
-//         <div className={classNames({[index['hvr-grow']]: true, [index.articletab]:true})}>
-//             <h3>{node.title}</h3>
-//             <h4>{node.createdAt}</h4>
-//         </div>
-//         </Link>
-//     )
-// }
 
 const IndexPage = (props) => {
     return (
+        <div>
             <Layout>
+                <Helmet>
+                    <title>Artem Biyun</title>
+                </Helmet>
                 <div id={index['intro-card']}>
                     <h1 style={{color:'black'}}>
                         Artem Biyun
                     </h1>
-                    <h3>Front-end web developer</h3>
-                    <h3>   React \ Node \ Angular \ </h3>
-                    <h3> Javascript \ Scss \ HTML</h3>
+                    <h4 style={{color:'black'}}>Fun on the front-end</h4>
+                    <h4 style={{color:'black'}}>Buisness on the back-end</h4>
                 </div>
-                {/* <div id={index['text-bubble']}>
-                    <h5>
-                        "Hello and welcome to a very strange web development blog"
-                    </h5>
-                    <div id={index['text-bubble__rounded']}/> */}
-                {/* </div> */}
-                 {/* <div id={index.blogPostsLayout}>
-                    {props.data.allContentfulBlog.edges.map((edge) => <BlogPost key={edge.node.id} node={edge.node} />)}
-                </div> */}
             </Layout>
+            <Paralax1/>
+            <Paralax2/>
+            <Paralax3/>
+        </div>
     )
 }
 

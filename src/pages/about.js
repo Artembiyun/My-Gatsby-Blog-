@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -9,7 +8,6 @@ import blogpost from "../styles/blog-post.module.scss"
 const About = (pageQuery) => (
   <Layout>
     <SEO title="About" />
-    {console.log(pageQuery)}
       <div id={blogpost.content}>
         <div id={blogpost.content__main}>
           {pageQuery.data.allContentfulAbout.edges.map((edges) =>
@@ -25,10 +23,10 @@ const About = (pageQuery) => (
                     </h3>
                       <div className={blogpost.socmedia}>
                         <a href='https://www.facebook.com/profile.php?id=100008391877805'>
-                          <img src={require('../images/icons/fb-icon.svg')}/>
+                          <img src={require('../images/icons/fb-icon.svg')} alt="FaceBook Icon"/>
                         </a>
                         <a href='https://www.instagram.com/senior_artyom/'>
-                          <img src={require('../images/icons/instagram-icon.svg')}/>
+                          <img src={require('../images/icons/instagram-icon.svg')} alt="Instagram Icon"/>
                         </a>
                         <a href='https://www.linkedin.com/in/artembiyun/'>
                           <img src={require('../images/icons/linkedin-icon.svg')} alt="Linkedin Profile"/>
@@ -44,9 +42,14 @@ const About = (pageQuery) => (
                         }}>
                   {edges.node.title}
                 </h2>
-                <p id={blogpost.abouttext}>
-                  <div dangerouslySetInnerHTML={{__html:edges.node.content.childMarkdownRemark.html}} />
-                </p>
+                  <div dangerouslySetInnerHTML={{__html:edges.node.content.childMarkdownRemark.html}}
+                    style={{
+                      textAlign: 'center',
+                      padding: '15px 30px 20px 30px',
+                      fontWeight: '500',
+                      fontSize: '26px'
+                    }}
+                  />
                 </div>
             </div>
           )}
