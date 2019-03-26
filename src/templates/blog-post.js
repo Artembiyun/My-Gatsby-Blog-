@@ -45,11 +45,6 @@ export const pageQuery = graphql`
                     ...GatsbyContentfulSizes
                 }
             }
-            content {
-                childMarkdownRemark {
-                    html
-                }
-            }
             richContent{
                 richContent
             }

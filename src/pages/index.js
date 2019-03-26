@@ -52,11 +52,6 @@ export const pageQuery = graphql`
                             ...GatsbyContentfulResolutions
                         }
                     }
-                    content {
-                        childMarkdownRemark {
-                            excerpt
-                        }
-                    }
                 }
             }
         }
