@@ -30,7 +30,11 @@ class Blogpage extends Component {
           {this.props.data.allContentfulBlog.edges.map((edges) =>
             <div id={blogpost.content__main__centered}>
               <Img sizes={edges.node.featuredImage.sizes}/>
-              <h2>
+              <h2 style={{
+              color: 'black',
+              paddingTop: '0.8rem',
+              paddingBottom: '0.5rem'
+              }}>
                 <Link to={this.Bloglink(edges.node.slug)}>{edges.node.title}</Link>
               </h2>
               <p>

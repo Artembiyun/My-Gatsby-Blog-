@@ -14,6 +14,7 @@ body{
     z-index: -2;
     display: flex;
     background-image: url("../images/53233294_374744263078341_18310901576761344_n.jpg");
+    width: 100vw;
     background-repeat: no-repeat;
     background-position: 200px 0px;
     background-size: cover;
@@ -73,6 +74,7 @@ p{
     #main{
         height: 100vh;
         flex-direction: column;
+        background-position: center;
     }
     body{
         background-position: center;
