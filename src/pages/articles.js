@@ -5,13 +5,19 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 
 import blogpost from "../styles/blog-post.module.scss"
 
 class Blogpage extends Component {
+
   richtext(richContent){
+    const options = {
+      [BLOCKS.EMBEDDED_ASSET]: (node) => '<img>${node}</img>'
+    }
+
     const document = JSON.parse(richContent);
-    const blogPost = documentToHtmlString(document);
+    const blogPost = documentToHtmlString(document, options);
     return blogPost;
   }
 
@@ -28,6 +34,7 @@ class Blogpage extends Component {
         <div id={blogpost.content__main}>
           {this.props.data.allContentfulBlog.edges.map((edges) =>
             <div id={blogpost.content__main__centered}>
+            {console.log(this)}
               <div className={blogpost.imageBox}>
                 <Img sizes={edges.node.featuredImage.sizes}/>
               </div>
