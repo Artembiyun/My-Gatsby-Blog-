@@ -14,7 +14,7 @@ const IndexPage = (props) => {
                     <h1 style={{color:'black'}}>
                         Artem Biyun
                     </h1>
-                    <h4 style={{color:'black'}}>Hello and welcome!</h4>
+                    <h4 style={{color:'black'}}>Thoughts of an aspiring web developer</h4>
                 </div>
             </Layout>
     )

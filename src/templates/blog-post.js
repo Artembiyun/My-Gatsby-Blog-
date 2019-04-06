@@ -16,16 +16,22 @@ class BlogPost extends Component {
             <div id={blogpost.content}>
                 <div id={blogpost.content__main}>
                     <div id={blogpost.content__main__centered}>
-                        <Img sizes={featuredImage.sizes}/>
+                        <div className={blogpost.imageBox}>
+                            <Img sizes={featuredImage.sizes}/>
+                        </div>
                         <h2 style={{
                             color: 'black',
                             paddingTop: '0.8rem',
-                            paddingBottom: '0.5rem'
+                            paddingBottom: '0.5rem',
+                            textAlign:'center'
                         }}>
                             {title}
                         </h2>
-                        <p>{createdAt}</p>
-                        <div dangerouslySetInnerHTML={{__html:blogPost}} />
+                        <p style={{textAlign:'center', fontWeight:'bold'}}>
+                        {createdAt}</p>
+                        <div className={blogpost.contentBox}>
+                            <div dangerouslySetInnerHTML={{__html:blogPost}} />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -41,7 +47,7 @@ export const pageQuery = graphql`
             title
             createdAt(formatString: "MMMM DD, YYYY")
             featuredImage {
-                sizes(maxWidth: 800) {
+                sizes(maxWidth: 600) {
                     ...GatsbyContentfulSizes
                 }
             }

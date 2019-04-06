@@ -15,14 +15,24 @@
         &__centered{ 
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
             margin: 26px;
             margin-top: 10vh;
             max-height: 100%;
-            max-width: 800px;
+            max-width: 1200px;
             padding-bottom: 50px;
             line-height: 26pt;
        }
     }
+}
+
+.imageBox{
+    width: 60%;
+}
+
+.contentBox{
+    width: 800px;
 }
 
 #about{
@@ -60,6 +70,9 @@
 }
 
 @media (max-width: 1000px){
+    .imageBox{
+        width: 95%;
+    }
     #content{
         width: 100vw;
         &__main{

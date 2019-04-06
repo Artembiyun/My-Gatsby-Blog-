@@ -17,10 +17,10 @@ const Header = ({ siteTitle }) => (
       </h2>
     </div>
     <div className={header.subheading}>
-      <h4>
+      <h5 style={{color:'white'}}>
         Web Dev Blog <br/>
          For the Future
-      </h4>
+      </h5>
     </div>
     <div className={header.menubox}>
       <div className={header.menubox__item}>
