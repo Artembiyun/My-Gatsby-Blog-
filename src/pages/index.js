@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 
 import index from "../styles/index.module.scss"
 import Layout from "../components/layout"
+import Cards from "../components/cards"
 
 const IndexPage = (props) => {
     return (
@@ -16,6 +17,7 @@ const IndexPage = (props) => {
                     </h1>
                     <h4 style={{color:'black'}}>Thoughts of an aspiring web developer</h4>
                 </div>
+                <Cards props={props.data}> </Cards>
             </Layout>
     )
 }

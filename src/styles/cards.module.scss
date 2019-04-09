@@ -1,0 +1,45 @@
+
+.cards-segment{
+    position: absolute;
+    bottom: 0px;
+}
+
+.cards-title{
+    background-color: white;
+}
+
+.holder{
+    display: flex;
+    flex-flow: wrap;
+    padding: 20px;
+    overflow: vertical;
+
+    &__cards{
+        margin: 5px;
+        padding: 5px;
+        width: 200px;
+        height: 200px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 3px;
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: end;
+        box-shadow: 1px 1px 5px rgb(0, 0, 0);
+  }
+}
+
+/* Grow */
+.hvr-grow {
+    vertical-align: middle;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
+}

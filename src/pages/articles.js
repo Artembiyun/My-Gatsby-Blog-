@@ -5,19 +5,30 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import { BLOCKS, MARKS } from '@contentful/rich-text-types';
-
 import blogpost from "../styles/blog-post.module.scss"
 
 class Blogpage extends Component {
 
   richtext(richContent){
-    const options = {
-      [BLOCKS.EMBEDDED_ASSET]: (node) => '<img>${node}</img>'
-    }
-
+    //Use JSON.parse on raw input 
     const document = JSON.parse(richContent);
-    const blogPost = documentToHtmlString(document, options);
+
+    //Get length of nodes
+    const dl = document.content.length;
+
+    //Convert Parsed object into HTML
+    let blogPost = documentToHtmlString(document);
+
+    //Loop through 
+    for (let i = 0; i < dl; i++){
+      if(document.content[i].nodeType === "embedded-asset-block"){
+        if(document.content[i].data.target.fields){
+          let url = document.content[i].data.target.fields.file['en-US'].url;
+          url = url.substring(2);
+          blogPost = blogPost.replace('(XXX)', '<img src=https://' + url + '>' + '</img>');
+        }
+      }
+    }
     return blogPost;
   }
 
@@ -34,25 +45,24 @@ class Blogpage extends Component {
         <div id={blogpost.content__main}>
           {this.props.data.allContentfulBlog.edges.map((edges) =>
             <div id={blogpost.content__main__centered}>
-            {console.log(this)}
               <div className={blogpost.imageBox}>
                 <Img sizes={edges.node.featuredImage.sizes}/>
               </div>
-              <h2 style={{
-              color: 'black',
-              paddingTop: '0.8rem',
-              paddingBottom: '0.5rem',
-              textAlign:'center'
-              }}>
-                <Link to={this.Bloglink(edges.node.slug)}>{edges.node.title}</Link>
-              </h2>
+                <h2 style={{
+                    color: 'black',
+                    paddingTop: '0.8rem',
+                    paddingBottom: '0.5rem',
+                    textAlign:'center'
+                  }}>
+                  <Link to={this.Bloglink(edges.node.slug)}>{edges.node.title}</Link>
+                </h2>
                 <p style={{textAlign:'center', fontWeight:'bold'}}>
                   {edges.node.createdAt}
                 </p>
                 <div className={blogpost.contentBox}>
                   <div dangerouslySetInnerHTML={{__html:this.richtext(edges.node.richContent.richContent)}} style={{fontWeight:'bold'}} />
                 </div>
-            <hr/>
+              <hr/>
             </div>
           )}
         </div>
@@ -85,8 +95,8 @@ export const ArticlesQuery = graphql`
                   ...GatsbyContentfulSizes
               }
             }
-              richContent{
-                richContent
+            richContent{
+              richContent
             }
           }
         }
