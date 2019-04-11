@@ -12,7 +12,7 @@ const Cards = props => {
           <Link to={edges.node.slug}>
           <div className={cards["hvr-grow"] + " " + cards.holder__cards}>
             <Img resolutions={edges.node.featuredImage.resolutions}/>
-            <h3>{edges.node.title}</h3>
+            <h3 className={cards.title}>{edges.node.title}</h3>
           </div>
           </Link>
         ))}

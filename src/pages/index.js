@@ -7,16 +7,16 @@ import Cards from "../components/cards"
 
 const IndexPage = (props) => {
     return (
-            <Layout>
+            <Layout indexLayout='true'>
                 <Helmet>
                     <title>Artem Biyun</title>
                 </Helmet>
-                <div id={index['intro-card']}>
+                {/* <div id={index['intro-card']}>
                     <h1 style={{color:'black'}}>
                         Artem Biyun
                     </h1>
                     <h4 style={{color:'black'}}>Thoughts of an aspiring web developer</h4>
-                </div>
+                </div> */}
                 <Cards props={props.data}> </Cards>
             </Layout>
     )
@@ -41,7 +41,7 @@ export const pageQuery = graphql`
                     slug
                     createdAt(formatString: "MMMM DD, YYYY")
                     featuredImage {
-                        resolutions(width: 200) {
+                        resolutions(width: 400) {
                             ...GatsbyContentfulResolutions
                         }
                     }
