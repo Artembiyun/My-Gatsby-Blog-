@@ -3,21 +3,13 @@ import Helmet from 'react-helmet';
 
 import index from "../styles/index.module.scss"
 import Layout from "../components/layout"
-import Cards from "../components/cards"
 
 const IndexPage = (props) => {
     return (
-            <Layout indexLayout='true'>
+            <Layout indexLayout='true' props={props.data}>
                 <Helmet>
                     <title>Artem Biyun</title>
                 </Helmet>
-                {/* <div id={index['intro-card']}>
-                    <h1 style={{color:'black'}}>
-                        Artem Biyun
-                    </h1>
-                    <h4 style={{color:'black'}}>Thoughts of an aspiring web developer</h4>
-                </div> */}
-                <Cards props={props.data}> </Cards>
             </Layout>
     )
 }
@@ -41,8 +33,8 @@ export const pageQuery = graphql`
                     slug
                     createdAt(formatString: "MMMM DD, YYYY")
                     featuredImage {
-                        resolutions(width: 400) {
-                            ...GatsbyContentfulResolutions
+                        sizes(maxWidth: 400) {
+                            ...GatsbyContentfulSizes
                         }
                     }
                 }

@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Header from "./header"
 require ('../styles/layout.scss')
 
-const Layout = ({ children, indexLayout }) => (
+const Layout = ({ children, indexLayout, props }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -18,7 +18,7 @@ const Layout = ({ children, indexLayout }) => (
     `}
     render={data => (
       <div id="main">
-        <Header siteTitle={data.site.siteMetadata.title} indexLayout={indexLayout} />
+        <Header siteTitle={data.site.siteMetadata.title} indexLayout={indexLayout} props={props} />
           <main>{children}</main>
       </div>
     )}

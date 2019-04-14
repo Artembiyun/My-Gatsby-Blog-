@@ -11,7 +11,7 @@ const Cards = props => {
         {props.props.allContentfulBlog.edges.map(edges => (
           <Link to={edges.node.slug}>
           <div className={cards["hvr-grow"] + " " + cards.holder__cards}>
-            <Img resolutions={edges.node.featuredImage.resolutions}/>
+            <Img sizes={edges.node.featuredImage.sizes}/>
             <h3 className={cards.title}>{edges.node.title}</h3>
           </div>
           </Link>
