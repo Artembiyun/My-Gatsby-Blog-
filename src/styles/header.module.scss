@@ -2,7 +2,7 @@
     background: rgba(71, 120, 212, 0.596);
     // background: rgba(204, 73, 73, 0.568);
     margin: 0;
-    width: 100vw;
+    width: 250px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -140,9 +140,10 @@ a{
 
     .indexBottomBox{
         overflow-y: auto;
+        padding: 20px 0 20px 0;
     }
 
-    #sidebar{
+    .sidebar{
         position: absolute;
         z-index: 99;
         width: 100vw;
