@@ -47,7 +47,7 @@ export const pageQuery = graphql`
             title
             createdAt(formatString: "MMMM DD, YYYY")
             featuredImage {
-                sizes(maxWidth: 600) {
+                sizes(maxWidth: 1000) {
                     ...GatsbyContentfulSizes
                 }
             }
