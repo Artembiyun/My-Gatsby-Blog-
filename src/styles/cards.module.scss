@@ -10,9 +10,9 @@
 .holder{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    // flex-direction: column;
     height: 100%;
-    margin-right: 6vw;
+    margin: 0 6vw 2vh 0;
 
     &__cards{
         flex-shrink: 1;
