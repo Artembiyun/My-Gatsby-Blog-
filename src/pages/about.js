@@ -25,7 +25,7 @@ const About = (pageQuery) => (
                         <a href='https://www.facebook.com/profile.php?id=100008391877805'>
                           <img src={require('../images/icons/fb-icon.svg')} alt="FaceBook Icon"/>
                         </a>
-                        <a href='https://www.instagram.com/senior_artyom/'>
+                        <a href='https://www.instagram.com/artembiyun/'>
                           <img src={require('../images/icons/instagram-icon.svg')} alt="Instagram Icon"/>
                         </a>
                         <a href='https://www.linkedin.com/in/artembiyun/'>
