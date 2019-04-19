@@ -10,7 +10,6 @@ const headerbox = ({siteTitle, indexLayout}) =>(
 <div className={indexLayout ? header.indexMainTitleBox : ""}>
 <div className={indexLayout ? header.indexTitle : header.title}>
   <h2 className={indexLayout ? header.indexTitleText : " "}>
-    {console.log(indexLayout)}
     <Link to="/" className="white">
       {siteTitle}
     </Link>
@@ -35,7 +34,6 @@ const headerbox = ({siteTitle, indexLayout}) =>(
 const menubox = ({indexLayout}) => (
 <div className={indexLayout ? header.indexMenubox : header.menubox}>
 <div className={header.menubox__item}>
-{console.log(indexLayout)}
   <h3>
     <Link to="/articles" className="white">
       Blog

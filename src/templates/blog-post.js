@@ -3,12 +3,21 @@ import React, { Component } from 'react'
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import blogpost from "../styles/blog-post.module.scss"
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS } from '@contentful/rich-text-types';
+
+const options = {
+    renderNode: {
+      [BLOCKS.EMBEDDED_ASSET]: node => {
+        let url = node.data.target.fields.file['en-US'].url;
+        return <img className={blogpost.centered} src={'https:' + url} width="600px"/>
+      }
+      },
+    }
+
 
 class BlogPost extends Component {
     render() {
-        const document = JSON.parse(this.props.data.contentfulBlog.richContent.richContent);
-        const blogPost = documentToHtmlString(document);
 
         const { title, createdAt, featuredImage} = this.props.data.contentfulBlog;
         return (
@@ -30,7 +39,7 @@ class BlogPost extends Component {
                         <p style={{textAlign:'center', fontWeight:'bold'}}>
                         {createdAt}</p>
                         <div className={blogpost.contentBox}>
-                            <div dangerouslySetInnerHTML={{__html:blogPost}} />
+                            {documentToReactComponents(this.props.data.contentfulBlog.richContent.json, options)}
                         </div>
                     </div>
                 </div>
@@ -52,7 +61,7 @@ export const pageQuery = graphql`
                 }
             }
             richContent{
-                richContent
+                json
             }
         }
     }

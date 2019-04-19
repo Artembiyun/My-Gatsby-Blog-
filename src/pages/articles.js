@@ -4,33 +4,21 @@ import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import blogpost from "../styles/blog-post.module.scss"
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS } from '@contentful/rich-text-types';
+
+const options = {
+    renderNode: {
+      [BLOCKS.EMBEDDED_ASSET]: node => {
+        let url = node.data.target.fields.file['en-US'].url;
+        return <img className={blogpost.centered} src={'https:' + url} width="600px"/>
+      }
+      },
+    }
+
 
 class Blogpage extends Component {
-
-  richtext(richContent){
-    //Use JSON.parse on raw input 
-    const document = JSON.parse(richContent);
-
-    //Get length of nodes
-    const dl = document.content.length;
-
-    //Convert Parsed object into HTML
-    let blogPost = documentToHtmlString(document);
-
-    //Loop through 
-    for (let i = 0; i < dl; i++){
-      if(document.content[i].nodeType === "embedded-asset-block"){
-        if(document.content[i].data.target.fields){
-          let url = document.content[i].data.target.fields.file['en-US'].url;
-          url = url.substring(2);
-          blogPost = blogPost.replace('(XXX)', '<img src=https://' + url + '>' + '</img>');
-        }
-      }
-    }
-    return blogPost;
-  }
 
   Bloglink(link){
     let linkText = '/' + link;
@@ -59,8 +47,8 @@ class Blogpage extends Component {
                 <p style={{textAlign:'center', fontWeight:'bold'}}>
                   {edges.node.createdAt}
                 </p>
-                <div className={blogpost.contentBox}>
-                  <div dangerouslySetInnerHTML={{__html:this.richtext(edges.node.richContent.richContent)}} style={{fontWeight:'bold'}} />
+                <div className={blogpost.contentBox}> 
+                  {documentToReactComponents(edges.node.richContent.json, options)}
                 </div>
               <hr/>
             </div>
@@ -96,7 +84,7 @@ export const ArticlesQuery = graphql`
               }
             }
             richContent{
-              richContent
+              json
             }
           }
         }

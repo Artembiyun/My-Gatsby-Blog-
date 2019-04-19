@@ -19,7 +19,7 @@
     "gatsby-plugin-react-svg": "^2.1.0",
     "gatsby-plugin-sass": "^2.0.10",
     "gatsby-plugin-sharp": "^2.0.20",
-    "gatsby-source-contentful": "^2.0.29",
+    "gatsby-source-contentful": "^2.0.50",
     "gatsby-source-filesystem": "^2.0.20",
     "gatsby-transformer-remark": "^2.2.4",
     "gatsby-transformer-sharp": "^2.1.13",
