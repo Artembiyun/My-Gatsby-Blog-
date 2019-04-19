@@ -9,8 +9,13 @@ import { BLOCKS } from '@contentful/rich-text-types';
 const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: node => {
+        if(!node.data.target.fields){
+            return "Sorry, something went wrong.."
+        }
+        else{
         let url = node.data.target.fields.file['en-US'].url;
-        return <img className={blogpost.centered} src={'https:' + url} width="600px"/>
+        return <img className={blogpost.centered} src={'https:' + url} alt="content" width="600px"/>
+        }
       }
       },
     }

@@ -1,7 +1,5 @@
 import React from 'react'
 import Helmet from 'react-helmet';
-
-import index from "../styles/index.module.scss"
 import Layout from "../components/layout"
 
 const IndexPage = (props) => {
@@ -19,6 +17,7 @@ export default IndexPage
 export const pageQuery = graphql`
     query pageQuery {
         allContentfulBlog(
+            limit: 3
             filter: {
                 node_locale: {eq: "en-US"}
             },

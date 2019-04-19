@@ -1,4 +1,3 @@
-const { BLOCKS, MARKS, INLINES } = require('@contentful/rich-text-types')
 module.exports = {
   siteMetadata: {
     title: `^rtem`,
@@ -36,7 +35,6 @@ module.exports = {
     },
     // {
     //   resolve: 'gatsby-source-contentful',
-    //   options: contentfulConfig,
     // },
     {
       resolve: `gatsby-source-filesystem`,

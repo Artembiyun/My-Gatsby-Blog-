@@ -1,6 +1,7 @@
 
 .cards-segment{
     top: 60vh;
+    overflow-y: auto;
 }
 
 .cards-title{
@@ -9,8 +10,7 @@
 
 .holder{
     display: flex;
-    flex-wrap: wrap-reverse;
-    height: 100%;
+    flex-wrap: wrap;
     margin: 0 6vw 2vh 0;
 
     &__cards{
@@ -53,6 +53,25 @@
 .hvr-grow:active {
     transform: scale(1.1);
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #88888879; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(56, 56, 56, 0.63); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background:  rgb(204, 73, 73); 
+  }
 
 @media (max-width: 1000px){
     .holder{

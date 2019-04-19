@@ -9,7 +9,7 @@ const Cards = props => {
     <div className={cards["cards-segment"]}>
       <div className={cards.holder}>
         {props.props.allContentfulBlog.edges.map(edges => (
-          <Link to={edges.node.slug}>
+          <Link to={"/" + edges.node.slug} key={edges.node.id}>
           <div className={cards["hvr-grow"] + " " + cards.holder__cards}>
             <Img sizes={edges.node.featuredImage.sizes} style={{opacity: '0.6'}}/>
             <h3 className={cards.title}>{edges.node.title}</h3>
