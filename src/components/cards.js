@@ -7,11 +7,12 @@ import { Link } from "gatsby"
 const Cards = props => {
   return (
     <div className={cards["cards-segment"]}>
+    <h2 style={{color:'white', margin: '10px'}}> Latest Blog Posts</h2>
       <div className={cards.holder}>
         {props.props.allContentfulBlog.edges.map(edges => (
           <Link to={"/" + edges.node.slug} key={edges.node.id}>
           <div className={cards["hvr-grow"] + " " + cards.holder__cards}>
-            <Img sizes={edges.node.featuredImage.sizes} style={{opacity: '0.6'}}/>
+            <Img sizes={edges.node.featuredImage.sizes} style={{opacity: '0.8', filter:'blur(1.5px)'}}/>
             <h3 className={cards.title}>{edges.node.title}</h3>
           </div>
           </Link>

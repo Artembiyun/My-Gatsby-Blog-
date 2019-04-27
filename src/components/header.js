@@ -37,6 +37,13 @@ const menubox = ({ indexLayout }) => (
   <div className={indexLayout ? header.indexMenubox : header.menubox}>
     <div className={header.menubox__item}>
       <h3>
+        <Link to="/projects-page" className="white">
+          Projects
+        </Link>
+      </h3>
+    </div>
+    <div className={header.menubox__item}>
+      <h3>
         <Link to="/articles" className="white">
           Blog
         </Link>
