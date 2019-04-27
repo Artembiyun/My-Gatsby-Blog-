@@ -1,0 +1,50 @@
+.canvas{
+    width: calc(100vw - 250px);
+    height: 100%;
+    background: rgba(71, 120, 212, 0.596);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards-holder{
+    width: 80%;
+    height: 75%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow: auto;
+    padding:40px 20px 20px 20px;
+    &__card{
+        text-align: center;
+        width: 450px;
+        box-shadow: 1px 1px 2px;
+        margin: 5px;
+        padding: 10px;
+        background-color: aliceblue;
+    }
+}
+
+@media(max-width: 1000px){
+    .canvas{
+        height: 100vh;
+        width: 100vw;
+    }
+}
+
+/* Grow */
+.hvr-grow {
+    vertical-align: middle;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.01);
+}
