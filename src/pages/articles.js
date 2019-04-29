@@ -46,7 +46,7 @@ class Blogpage extends Component {
                     paddingBottom: '0.5rem',
                     textAlign:'center'
                   }}>
-                  <Link to={this.Bloglink(edges.node.slug)}>{edges.node.title}</Link>
+                  <Link to={this.Bloglink(edges.node.slug)} style={{color:'black'}}>{edges.node.title}</Link>
                 </h2>
                 <p style={{textAlign:'center', fontWeight:'bold'}}>
                   {edges.node.createdAt}
