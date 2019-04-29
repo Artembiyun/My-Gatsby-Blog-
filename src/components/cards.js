@@ -3,6 +3,7 @@ import React from "react";
 import cards from "../styles/cards.module.scss";
 import Img from "gatsby-image";
 import { Link } from "gatsby"
+require ('../styles/layout.scss')
 
 const Cards = props => {
   return (
@@ -12,8 +13,9 @@ const Cards = props => {
         {props.props.allContentfulBlog.edges.map(edges => (
           <Link to={"/" + edges.node.slug} key={edges.node.id}>
           <div className={cards["hvr-grow"] + " " + cards.holder__cards}>
-            <Img sizes={edges.node.featuredImage.sizes} style={{opacity: '0.8', filter:'blur(1.5px)'}}/>
-            <h3 className={cards.title}>{edges.node.title}</h3>
+            <Img sizes={edges.node.featuredImage.sizes} style={{opacity: '0.5'}}/>
+            <p className={cards.title}>{edges.node.title}</p>
+            <p  className={cards.date}>{edges.node.createdAt}</p>
           </div>
           </Link>
         ))}

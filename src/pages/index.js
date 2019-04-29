@@ -18,7 +18,7 @@ export default IndexPage
 export const pageQuery = graphql`
     query pageQuery {
         allContentfulBlog(
-            limit: 3
+            limit: 6
             filter: {
                 node_locale: {eq: "en-US"}
             },
