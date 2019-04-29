@@ -1,13 +1,13 @@
 import React from 'react'
 import Helmet from 'react-helmet';
+import SEO from "../components/seo"
 import Layout from "../components/layout"
-import Projects from "../pages/projects-page"
 
 const IndexPage = (props) => {
     return (
             <Layout indexLayout='true' props={props.data}>
+                <SEO title="Web Development"/>
                 <Helmet>
-                    <title>Artem Biyun</title>
                 </Helmet>
             </Layout>
     )
