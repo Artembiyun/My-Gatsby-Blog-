@@ -26,6 +26,19 @@ a{
     height: 40px;
 }
 
+.bio{
+    background-color: rgba(0, 0, 0, 0.486);
+    font-size:1.2rem;
+    font-weight:lighter;
+    width:300px;
+    height: 160px;
+    padding: 20px;
+    position: absolute;
+    color:white;
+    right: 2.5%;
+    top: 15%;
+}
+
 #angle{
     height: 90px;
     width: 300px;
@@ -81,6 +94,7 @@ a{
 }
 
 .indexTitle{
+    width: 400px;
     justify-content: center;
     text-align: center;
 }
@@ -128,6 +142,10 @@ a{
 
 @media (max-width: 1000px){
 
+    .bio{
+        display: none;
+    }
+
     .indexMainTitleBox{
         padding: 2vh 0 4vh 0;
     }
@@ -150,7 +168,7 @@ a{
         position: absolute;
         z-index: 99;
         width: 100vw;
-        height:80px;
+        height:100px;
         flex-direction: row;
     }
 

@@ -7,6 +7,14 @@ import Typist from "react-typist";
 import header from "../styles/header.module.scss";
 require("../styles/header.module.scss");
 
+function randomQuote(){
+let Quotes = ["Help, I can't stop thinking about code", "Creativity, reiteration and elevator music", "Web Developer", "It just keeps getting better and better"]
+  let i = Math.floor(Math.random()*Quotes.length);
+  return Quotes[i];
+}
+
+let bio = "My name is Artem, I'm a developer with over two years experience in web development and design. I believe every problem deserves an innovative solution, I like to make things happen and I set high standards for my work"
+
 const headerbox = ({ siteTitle, indexLayout }) => (
   <div className={indexLayout ? header.indexMainTitleBox : ""}>
     <div className={indexLayout ? header.indexTitle : header.title}>
@@ -19,7 +27,7 @@ const headerbox = ({ siteTitle, indexLayout }) => (
     <div className={indexLayout ? header.indexSubheading : header.subheading}>
       {indexLayout ? (
         <h3 style={{ color: "white" }}>
-          <Typist avgTypingSpeed={1}>Thoughts of an aspiring Web developer</Typist>
+          <Typist avgTypingSpeed={1}>{randomQuote()}</Typist>
         </h3>
       ) : (
         <h3 style={{ color: "white", fontSize: "1.4rem" }}>
@@ -66,6 +74,7 @@ const Header = ({ siteTitle, indexLayout, props }) => (
       <div className={header.indexTopBox}>
         {headerbox({ siteTitle, indexLayout })}
         {menubox({ indexLayout })}
+        <p className={header.bio}>{bio}</p>
       </div>
     ) : (
       <>

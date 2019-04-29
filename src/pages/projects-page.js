@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+
 import Layout from "../components/layout";
+import SEO from "../components/seo"
 import projects from "../styles/projects.module.scss";
 import Img from "gatsby-image";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -8,6 +10,7 @@ class Projects extends Component {
   render() {
     return (
       <Layout minlayout={true}>
+				<SEO title="Projects"/>
         <div className={projects.canvas}>
           <div className={projects["cards-holder"]}>
 					{this.props.data.allContentfulProjects.edges.map(edges => (
