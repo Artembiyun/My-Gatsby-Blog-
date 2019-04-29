@@ -13,8 +13,8 @@ class Projects extends Component {
 					{this.props.data.allContentfulProjects.edges.map(edges => (
 						<div className={projects["cards-holder__card"] + " " + projects["hvr-grow"]} key={edges.node.id}>
 							<Img sizes={edges.node.image.sizes} style={{height: '300px'}}/>
-							<h2 style={{fontWeight:'bold'}}>{edges.node.title}</h2>
-							{documentToReactComponents(edges.node.content.json)}
+							<h5 style={{fontWeight:'bold'}}>{edges.node.title}</h5>
+							<h1>{documentToReactComponents(edges.node.content.json)}</h1>
 						</div>
 					))}
 					</div>
