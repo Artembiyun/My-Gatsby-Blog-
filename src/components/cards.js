@@ -8,7 +8,7 @@ require ('../styles/layout.scss')
 const Cards = props => {
   return (
     <div className={cards["cards-segment"]}>
-    <h2 style={{color:'white', margin: '10px'}}> Latest Blog Posts</h2>
+    <h2 id={cards.lbpBanner}> Latest Blog Posts</h2>
       <div className={cards.holder}>
         {props.props.allContentfulBlog.edges.map(edges => (
           <Link to={"/" + edges.node.slug} key={edges.node.id}>

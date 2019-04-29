@@ -185,3 +185,17 @@ a{
         padding-left: 1rem;
     }
 }
+
+@media (max-width: 400px){
+    .sidebar{
+        width: 100vw;
+        height:120px;
+        flex-direction: column;
+    }
+
+    .menubox{
+        width: 100vw;
+        padding: 0;
+        justify-content: space-around;
+    }
+}

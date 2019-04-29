@@ -78,7 +78,7 @@ p{
     margin: 0;
     font-weight: 500;
     padding-top: 20px;
-    font-size: 26px;
+    font-size: 1.6rem;
 }
 
 @media (max-width: 1000px){
@@ -89,5 +89,19 @@ p{
     }
     body{
         background-position: center;
+    }
+
+    h2{
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 400px){
+    h2{
+        font-size: 2.1rem;
     }
 }
