@@ -51,7 +51,8 @@ export default IndexPage
 
 export const ProjectQuery = graphql`
     query ProjectQuery {
-        allContentfulProjects{
+        allContentfulProjects(sort: { fields: [createdAt], order: ASC })
+        {
 					edges {
 						node{
 							id
