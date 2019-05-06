@@ -1,11 +1,12 @@
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
+import Scroll from "../components/smoothscroll";
 import Cards from "../components/cards";
 import Typist from "react-typist";
-
 import header from "../styles/header.module.scss";
 require("../styles/header.module.scss");
+
 
 function randomQuote(){
 let Quotes = ["Help, I can't stop thinking about code", "Creativity, reiteration and elevator music", "Web Developer", "It just keeps getting better and better"]
@@ -70,6 +71,9 @@ const Header = ({ siteTitle, indexLayout, props }) => (
     <div id={header.angle} />
     {indexLayout ? (
       <div className={header.indexTopBox}>
+        <div style={{width:'100vw', display:'flex', justifyContent:'center'}}>
+        <Scroll/>
+        </div>
         {headerbox({ siteTitle, indexLayout })}
         {menubox({ indexLayout })}
       </div>

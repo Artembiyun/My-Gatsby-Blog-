@@ -5,7 +5,7 @@ import bioStyle from "../styles/bio.module.scss"
 class bio extends Component {
     render() {
         return (
-            <div className={bioStyle.bioMain}>
+            <div className={bioStyle.bioMain} id="bio">
                 <div className={bioStyle.textHolder}>
                     <h1>Building it better, faster, stronger ect. </h1>
                 </div>
