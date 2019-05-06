@@ -31,7 +31,11 @@ class skills extends Component {
                     <img src={nodeIcon} width='200px' />
                         <h1>NodeJS</h1>
                     </div>
-                    <div className={skillstyles.skillsBox__holder__skill}>
+                    <div className={skillstyles.skillsBox__holder__skill} data-aos="fade-up-left"
+                    data-aos-easing="linear"
+                    data-aos-duration="5000"
+                    data-aos-delay="300"
+                    >
                     <img src={heartIcon} width='200px' />
                         <h1>& Love</h1>
                     </div>

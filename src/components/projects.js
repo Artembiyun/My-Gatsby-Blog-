@@ -20,14 +20,13 @@ class projects extends Component {
 
     return (
       <div>
-        {console.log(this)}
         {this.props.projects.allContentfulProjects.edges.map((edges, index) => (
           <div className={projectStyles.project} key={index} style={truefalse(index) ?{flexDirection: 'row-reverse'} : {flexDirection: 'row'}}>
-            <div className={projectStyles.project__image}>
+            <div className={projectStyles.project__image} data-aos={truefalse(index) ?"fade-left": "fade-right"}>
               <Img sizes={edges.node.image.sizes} style={{height:'60vh'}}> </Img>
             </div>
-            <div className={projectStyles.project__text}>
-              <h1>
+            <div className={projectStyles.project__text} data-aos={truefalse(index) ?"fade-right": "fade-left"}>
+              <h1 style={{width:'600px'}}>
                 {edges.node.title}
               </h1>
             </div>
