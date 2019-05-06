@@ -10,7 +10,6 @@
 
 .textHolder{
     max-width: 600px;
-    padding: 20px;
 }
 
 .vl{
@@ -22,6 +21,7 @@
 @media(max-width: 1000px){
     .bioMain{
         flex-direction: column;
+        width: 100%;
     }
     .vl{
         display: none;
@@ -33,5 +33,6 @@
     }
     .textHolder{
         max-width: 400px;
+        padding-left: 6px;
     }
 }
