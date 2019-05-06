@@ -1,0 +1,29 @@
+.project{
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    background-color: #ECECEC;
+
+    &__image{
+        width: 60vw;
+    }
+
+    &__text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 40vw;
+        background-color: #ECECEC;
+    }
+}
+
+@media(max-width: 1000px){
+    .project{
+        &__image{
+            width: 100vw;
+        }
+        &__text{display:none}
+    }
+}

@@ -1,38 +1,61 @@
 
 .cards-title{
-    background-color: white;
     font-size: 10px;
 }
 
-.holder{
-    background-color: white;
-    min-height: 170px;
-    width: 100vw;
+.cards-segment{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    flex-direction: column;
     align-items: center;
+    width: 450px;
+    margin:20px;
+}
+
+.holder{
+    position: absolute;
+    display: grid;
+    height: 60vh;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.4fr 0.4fr 0.3fr;
+    grid-gap: 5px;
 
     &__cards{
         flex-shrink: 1;
-        margin: 5px;
         background-color: rgb(32, 32, 32);
         border-radius: 3px;
         display: flex;
         flex-direction: column;
         text-align: center;
         box-shadow: 1px 1px 5px rgb(0, 0, 0);
-        width: 300px;
-        height: 160px;
-        margin: 0 0 0px 10px;
   }
+}
+
+.card0{
+    height: 60%;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.card1{
+    grid-row-start: 2;    
+}
+.card2{
+    grid-row-start: 2;  
+}
+.card3{
+    height: 100px;
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 
 .title{
     position: absolute;
     bottom: 20px;
     left: 15px;
-    color: white;
     font-weight: 500;
     font-size: 1.6rem;
     text-shadow: 2px 2px 4px #000000;
@@ -42,15 +65,14 @@
     position: absolute;
     bottom: 0px;
     left: 15px;
-    color: white;
     font-weight: 500;
     font-size: 1rem;
     text-shadow: 2px 2px 4px #000000;
 }
 
 #lbpBanner{
-    color:white; 
     margin: 10px;
+    color: white;
 }
 
 /* Grow */
@@ -66,7 +88,7 @@
 .hvr-grow:hover,
 .hvr-grow:focus,
 .hvr-grow:active {
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 
 ::-webkit-scrollbar {
@@ -92,12 +114,18 @@
     .holder{
         flex-direction: row;
         justify-content: center;
+        height: 40vh;
+        width: 100vw;
         margin: 0;
+        padding: 0;
         &__cards{
-            width: 250px;
-            height: 200px;
-            margin: 5px;
         }
+    }
+
+    .cards-segment{
+        overflow-y: auto;
+        width: 100vw;
+        margin: 20px;
     }
 
     .title{

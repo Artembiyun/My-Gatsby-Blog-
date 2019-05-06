@@ -13,8 +13,6 @@ let Quotes = ["Help, I can't stop thinking about code", "Creativity, reiteration
   return Quotes[i];
 }
 
-let bio = "My name is Artem, I'm a developer with over two years experience in web development and design. I believe every problem deserves an innovative solution, I like to make things happen and I set high standards for my work"
-
 const headerbox = ({ siteTitle, indexLayout }) => (
   <div className={indexLayout ? header.indexMainTitleBox : ""}>
     <div className={indexLayout ? header.indexTitle : header.title}>
@@ -30,7 +28,7 @@ const headerbox = ({ siteTitle, indexLayout }) => (
           <Typist avgTypingSpeed={1}>{randomQuote()}</Typist>
         </h3>
       ) : (
-        <h3 style={{ color: "white", fontSize: "1.4rem" }}>
+        <h3 style={{ color: "white", fontSize: "1.2rem" }}>
           <Typist>
             Web Dev Blog <br />
             For the Future!
@@ -74,7 +72,6 @@ const Header = ({ siteTitle, indexLayout, props }) => (
       <div className={header.indexTopBox}>
         {headerbox({ siteTitle, indexLayout })}
         {menubox({ indexLayout })}
-        <p className={header.bio}>{bio}</p>
       </div>
     ) : (
       <>
@@ -82,11 +79,6 @@ const Header = ({ siteTitle, indexLayout, props }) => (
         {menubox({ indexLayout })}
       </>
     )}
-    {indexLayout ? (
-      <div className={header.indexBottomBox}>
-        <Cards props={props} />
-      </div>
-    ) : null}
   </header>
 );
 

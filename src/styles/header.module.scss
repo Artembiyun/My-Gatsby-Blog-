@@ -1,6 +1,8 @@
 .sidebar{
-    background: rgba(71, 120, 212, 0.342);
+    position:relative;
+    // background: rgba(71, 120, 212, 0.301);
     // background: rgba(204, 73, 73, 0.568);
+    background-image: linear-gradient(60deg, rgba(71, 120, 212, 0.301), rgba(204, 73, 73, 0.568));
     margin: 0;
     width: 250px;
     height: 100vh;
@@ -20,33 +22,28 @@ a{
     color: white;
 }
 
+.bg{
+    display: flex;
+    flex-direction: row;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.indexbg{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
 .subheading{
     justify-content:center;
-    padding-left: 2rem;
+    padding-left: 3rem;
     height: 40px;
-}
-
-.bio{
-    background-color: rgba(0, 0, 0, 0.486);
-    font-size:1.2rem;
-    font-weight:lighter;
-    width:300px;
-    height: 160px;
-    padding: 20px;
-    position: absolute;
-    color:white;
-    right: 2.5%;
-    top: 15%;
-}
-
-#angle{
-    height: 90px;
-    width: 300px;
-    position: absolute;
-    top: -50px;
-    left: -80px;
-    transform: rotate(140deg);
-    background-color: #c6e1ff;
 }
 
 .menubox{
@@ -73,23 +70,24 @@ a{
 // Index Page header classes
 
 .indexMainTitleBox{
-    padding: 8vh 0 0 8vw;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100vw;
 }
 
 .indexSidebar{
-    background: rgba(71, 120, 212, 0.596);
+    background: rgba(71, 120, 212, 0.301);
+    background-image: linear-gradient(60deg, rgba(71, 120, 212, 0.301), rgba(204, 73, 73, 0.568));
     // background: rgba(204, 73, 73, 0.568);
     margin: 0;
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: space-between;
 }
 
@@ -101,12 +99,12 @@ a{
 
 .indexSubheading{
     justify-content:center;
-    padding-left: 2.5rem;
     width: 300px;
+    height: 120px;
 }
 
 .indexTitleText{
-    font-size: 14rem;
+    font-size: 10rem;
 }
 .indexMenubox{
     right: 20px;
@@ -130,14 +128,14 @@ a{
 }
 
 .indexTopBox{
+    position: absolute;
+    top: 0px;
     display: flex;
     justify-content: space-between;
-    width: 100vw
-}
-.indexBottomBox{
-    display: flex;
-    justify-content: flex-end;
+    flex-direction: column-reverse;
+    align-items: flex-end;
     width: 100vw;
+    height: 65vh;
 }
 
 @media (max-width: 1000px){
@@ -151,17 +149,17 @@ a{
     }
 
     .indexMenubox{
-        width: auto;
+        width: 100vw;
+    }
+
+    .subheading{
+        display: none;
     }
 
     .indexTopBox{
         flex-direction: column-reverse;
         justify-content: space-around;
-    }
-
-    .indexBottomBox{
-        overflow-y: auto;
-        padding: 20px 0 20px 0;
+        align-items: center;
     }
 
     .sidebar{
@@ -174,10 +172,6 @@ a{
 
     .title{
         padding: 0 0 0 6vw;
-    }
-
-    .subheading{
-       display: none;
     }
 
     #angle{
@@ -200,7 +194,6 @@ a{
 
     .indexSubheading{
         justify-content:center;
-        padding-left: 1rem;
     }
 }
 
