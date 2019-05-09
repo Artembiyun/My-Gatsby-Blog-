@@ -78,7 +78,8 @@ export const ProjectQuery = graphql`
 					edges {
 						node{
 							id
-							title
+              title
+              gitHub
 							content{
 								json
 							}
@@ -86,7 +87,7 @@ export const ProjectQuery = graphql`
 								sizes(maxWidth: 2000){
 									...GatsbyContentfulSizes
 								}
-							}
+              }
 						}
 					}
 			}

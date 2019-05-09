@@ -29,6 +29,7 @@ class projects extends Component {
               <h1 style={{width:'600px'}}>
                 {edges.node.title}
               </h1>
+              <a className={projectStyles.git} href={edges.node.gitHub}>Git</a>
             </div>
           </div>
         ))}
