@@ -20,26 +20,6 @@
     }
 }
 
-.git{
-    margin: 25px;
-    font-size: 2rem;
-    font-weight: bolder;
-    color: whitesmoke;
-    background-color: #24292e;
-    width: 120px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 25px;
-    transition:.9s;
-    box-shadow: 2px 2px rgba(211, 211, 211, 0.541);
-
-    &:hover{
-        background-color: #515961;
-    }
-}
-
 @media(max-width: 1000px){
     .project{
         &__image{

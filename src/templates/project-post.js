@@ -5,6 +5,7 @@ import SEO from "../components/seo";
 import blogpost from "../styles/blog-post.module.scss";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
+import { ENGINE_METHOD_DIGESTS } from "constants";
 
 const options = {
   renderNode: {
@@ -26,17 +27,22 @@ const options = {
   }
 };
 
-class BlogPost extends Component {
+class project extends Component {
   render() {
-    const { title, createdAt, featuredImage } = this.props.data.contentfulBlog;
+    const {
+      title,
+      createdAt,
+      image,
+      gitHub
+    } = this.props.data.contentfulProjects;
     return (
       <Layout minlayout={true}>
-        <SEO title="Blog" />
+        <SEO title="Projects" />
         <div id={blogpost.content}>
           <div id={blogpost.content__main}>
             <div id={blogpost.content__main__centered}>
               <div className={blogpost.imageBox}>
-                <Img sizes={featuredImage.sizes} />
+                <Img sizes={image.sizes} style={{ minWidth: "1000px" }} />
               </div>
               <h2
                 style={{
@@ -48,12 +54,17 @@ class BlogPost extends Component {
               >
                 {title}
               </h2>
-              <p style={{ textAlign: "center", fontWeight: "bold" }}>
-                {createdAt}
-              </p>
+              <div className={blogpost.buttons}>
+                <a className={blogpost.git} href={gitHub}>
+                  Git Repo
+                </a>
+                <a className={blogpost.live}>
+                  Live version(coming soon)
+                </a>
+              </div>
               <div className={blogpost.contentBox}>
                 {documentToReactComponents(
-                  this.props.data.contentfulBlog.richContent.json,
+                  this.props.data.contentfulProjects.content.json,
                   options
                 )}
               </div>
@@ -65,18 +76,20 @@ class BlogPost extends Component {
   }
 }
 
-export default BlogPost;
-export const pageQuery = graphql`
-  query blogPostQuery($slug: String!) {
-    contentfulBlog(slug: { eq: $slug }) {
+export default project;
+
+export const ProjectpageQuery = graphql`
+  query ProjectPageQuery($slug: String!) {
+    contentfulProjects(slug: { eq: $slug }) {
       title
+      gitHub
       createdAt(formatString: "MMMM DD, YYYY")
-      featuredImage {
+      image {
         sizes(maxWidth: 1000) {
           ...GatsbyContentfulSizes
         }
       }
-      richContent {
+      content {
         json
       }
     }

@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import projectStyles from "../styles/project.module.scss"
@@ -21,17 +22,19 @@ class projects extends Component {
     return (
       <div>
         {this.props.projects.allContentfulProjects.edges.map((edges, index) => (
+          <Link to={edges.node.slug}>
           <div className={projectStyles.project} key={index} style={truefalse(index) ?{flexDirection: 'row-reverse'} : {flexDirection: 'row'}}>
             <div className={projectStyles.project__image} data-aos={truefalse(index) ?"fade-left": "fade-right"}>
               <Img sizes={edges.node.image.sizes} style={{height:'60vh'}}> </Img>
             </div>
             <div className={projectStyles.project__text} data-aos={truefalse(index) ?"fade-right": "fade-left"}>
-              <h1 style={{width:'600px'}}>
+              <h1 style={{maxWidth:'600px'}}>
                 {edges.node.title}
               </h1>
-              <a className={projectStyles.git} href={edges.node.gitHub}>Git</a>
+              <h2>{edges.node.subHeading}</h2>
             </div>
           </div>
+          </Link>
         ))}
       </div>
     );

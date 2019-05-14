@@ -32,5 +32,34 @@ exports.createPages = ({graphql, boundActionCreators}) => {
                 return
             })
         )
+        const testTemplate = path.resolve('src/templates/project-post.js')
+        resolve(
+            graphql(`
+            {
+                allContentfulProjects{
+                    edges{
+                        node{
+                            id
+                            slug
+                        }
+                    }
+                }
+            }
+                `).then((result) => {
+                if (result.errors) {
+                    reject(result.errors)
+                }
+                result.data.allContentfulProjects.edges.forEach((edge) => {
+                    createPage({
+                        path: edge.node.slug,
+                        component: testTemplate,
+                        context: {
+                            slug: edge.node.slug
+                        }
+                    })
+                })
+                return
+            })
+        )
     })
 }

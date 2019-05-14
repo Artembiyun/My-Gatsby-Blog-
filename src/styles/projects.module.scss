@@ -1,29 +1,42 @@
 .canvas{
     width: calc(100vw - 250px);
     height: 100%;
-    background: rgba(71, 120, 212, 0.596);
+    // background-image: linear-gradient(60deg, rgba(71, 120, 212, 0.158), rgba(204, 73, 73, 0.288));
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .cards-holder{
-    width: 80%;
-    height: 80vh;
+    width: 95%;
+    height: 525px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    flex-wrap: wrap;
     overflow: auto;
-    padding:40px 20px 20px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
     &__card{
+        margin: 2px;
         text-align: center;
-        width: 300px;
         box-shadow: 1px 1px 2px;
-        margin: 5px;
-        padding: 10px;
         background-color: aliceblue;
+        z-index: -1;
     }
+}
+
+.cards-holder__card:hover + .description{
+    display:block;
+    position:fixed;
+    bottom: 0;
+    margin-bottom: 4vw;
+    background-color: white;
+    z-index: 1;
+}
+
+.description{
+    display:none;
 }
 
 @media(max-width: 1000px){

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo"
@@ -14,11 +15,15 @@ class Projects extends Component {
         <div className={projects.canvas}>
           <div className={projects["cards-holder"]}>
 					{this.props.data.allContentfulProjects.edges.map(edges => (
+						<Link to={edges.node.slug}>
 						<div className={projects["cards-holder__card"] + " " + projects["hvr-grow"]} key={edges.node.id}>
-							<Img sizes={edges.node.image.sizes} style={{height: '300px'}}/>
-							<h5 style={{fontWeight:'bold'}}>{edges.node.title}</h5>
-							<h1>{documentToReactComponents(edges.node.content.json)}</h1>
+							<Img sizes={edges.node.image.sizes} style={{height: '500px', width:'250px'}}/>
 						</div>
+						<div className={projects.description}>
+							<h1>{edges.node.title}</h1>
+							<h2>{edges.node.subHeading}</h2>
+						</div>
+						</Link>
 					))}
 					</div>
         </div>
@@ -31,11 +36,13 @@ export default Projects;
 
 export const ProjectsQuery = graphql`
     query ProjectsQuery {
-        allContentfulProjects{
+        allContentfulProjects(sort: { fields: [index], order: ASC }){
 					edges {
 						node{
 							id
 							title
+							slug
+							subHeading
 							content{
 								json
 							}
