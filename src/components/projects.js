@@ -21,6 +21,7 @@ class projects extends Component {
 
     return (
       <div>
+        <h1 className={projectStyles.title}>My Projects</h1>
         {this.props.projects.allContentfulProjects.edges.map((edges, index) => (
           <Link to={edges.node.slug}>
           <div className={projectStyles.project} key={index} style={truefalse(index) ?{flexDirection: 'row-reverse'} : {flexDirection: 'row'}}>

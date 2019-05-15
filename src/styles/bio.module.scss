@@ -22,6 +22,8 @@
     .bioMain{
         flex-direction: column;
         width: 100%;
+        height: 100%;
+        padding: 100px 0 100px 0;
     }
     .vl{
         display: none;
@@ -34,5 +36,6 @@
     .textHolder{
         max-width: 400px;
         padding-left: 6px;
+        padding: 20px;
     }
 }

@@ -11,7 +11,9 @@ class bio extends Component {
                 <div className={bioStyle.vl}></div>
                 <div className={bioStyle.hl}></div>
                 <div className={bioStyle.textHolder} data-aos="fade-up-left">
-                    <h2>Hi, I'm Artem Biyun, a web developer in Toronto Ontario. I specialize in React, I believe a lot can be said with very little and I love building Organizational Tools for everyone </h2>
+                    <h2>Hi, I'm Artem Biyun, a web developer in Toronto Ontario.
+                        I like React and building full stack apps out of all kinds of interesting tools
+                    </h2>
                 </div>
             </div>
         );

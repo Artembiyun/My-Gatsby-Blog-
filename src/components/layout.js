@@ -15,7 +15,7 @@ import Header from "./header"
 require ('../styles/layout.scss')
 
 function randombg(){
-  let imgs = [img1, img2, img3, img4, img5, img6, img7]
+  let imgs = [img1, img2, img3, img4, img5, img6, img7];
   let i = Math.floor(Math.random()*imgs.length);
   return imgs[i];
 }

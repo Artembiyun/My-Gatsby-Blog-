@@ -9,7 +9,7 @@ require("../styles/header.module.scss");
 
 
 function randomQuote(){
-let Quotes = ["Help, I can't stop thinking about code", "Creativity, reiteration and elevator music", "Web Developer", "It just keeps getting better and better"]
+let Quotes = ["Web Developer"]
   let i = Math.floor(Math.random()*Quotes.length);
   return Quotes[i];
 }

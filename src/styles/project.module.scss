@@ -20,6 +20,12 @@
     }
 }
 
+.title{
+    text-align: center;
+    background-color: #ECECEC;
+    padding: 60px;
+}
+
 @media(max-width: 1000px){
     .project{
         &__image{
