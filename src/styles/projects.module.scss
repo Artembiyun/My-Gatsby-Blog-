@@ -9,14 +9,15 @@
 }
 
 .cards-holder{
-    width: 95%;
-    height: 525px;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     overflow: auto;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     &__card{
         margin: 2px;
         text-align: center;
@@ -32,6 +33,8 @@
     bottom: 0;
     margin-bottom: 4vw;
     background-color: white;
+    border-radius: 5px;
+    padding: 20px;
     z-index: 1;
 }
 
