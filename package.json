@@ -29,6 +29,7 @@
     "prop-types": "^15.7.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
+    "react-ga": "^2.5.7",
     "react-helmet": "^5.2.0",
     "react-scroll": "^1.7.11",
     "react-typist": "^2.0.5",

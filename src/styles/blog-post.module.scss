@@ -52,6 +52,11 @@
     align-items: center;
 }
 
+.aboutImage{
+    width: 300px;
+    border-radius: 200px;
+}
+
 .about-box{
     display: flex;
     flex-direction: row;
@@ -144,5 +149,11 @@
     .about-box{
         width: 100vw;
         flex-direction: column;
+    }
+}
+
+@media (max-width: 500px){
+    .aboutImage{
+        width: 150px;
     }
 }

@@ -64,3 +64,11 @@
 .hvr-grow:active {
     transform: scale(1.01);
 }
+
+@media(max-width: 900px){
+    .canvas{
+        position: absolute; 
+        bottom:0;
+        height: 82%;
+    }
+}

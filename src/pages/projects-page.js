@@ -5,17 +5,24 @@ import Layout from "../components/layout";
 import SEO from "../components/seo"
 import projects from "../styles/projects.module.scss";
 import Img from "gatsby-image";
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import ReactGA from 'react-ga';
 
 class Projects extends Component {
+
+	projectsLink(link){
+		let linkText = '/' + link;
+    return linkText;
+	}
+
   render() {
     return (
       <Layout minlayout={true}>
+				{ReactGA.pageview("/projects")}
 				<SEO title="Projects"/>
         <div className={projects.canvas}>
           <div className={projects["cards-holder"]}>
 					{this.props.data.allContentfulProjects.edges.map(edges => (
-						<Link to={edges.node.slug}>
+						<Link to={this.projectsLink(edges.node.slug)}>
 						<div className={projects["cards-holder__card"] + " " + projects["hvr-grow"]} key={edges.node.id}>
 							<Img sizes={edges.node.image.sizes} style={{height: '500px', width:'250px'}}/>
 						</div>

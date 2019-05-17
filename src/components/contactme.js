@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import contactmestyles from "../styles/contactme.module.scss";
 import { Link } from "gatsby";
-import Typist from "react-typist";
 
 class contactme extends Component {
   render() {

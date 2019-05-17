@@ -1,10 +1,7 @@
 import { Link } from "gatsby";
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import projectStyles from "../styles/project.module.scss"
 import Img from "gatsby-image";
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-
 
 
 class projects extends Component {
@@ -12,7 +9,7 @@ class projects extends Component {
 
     function truefalse(i) {
       let even = i % 2;
-      if(even == 0)
+      if(even === 0)
       {return true;}
       else{
         return false;
@@ -23,8 +20,8 @@ class projects extends Component {
       <div>
         <h1 className={projectStyles.title}>My Projects</h1>
         {this.props.projects.allContentfulProjects.edges.map((edges, index) => (
-          <Link to={edges.node.slug}>
-          <div className={projectStyles.project} key={index} style={truefalse(index) ?{flexDirection: 'row-reverse'} : {flexDirection: 'row'}}>
+          <Link to={edges.node.slug} key={index}>
+          <div className={projectStyles.project} style={truefalse(index) ?{flexDirection: 'row-reverse'} : {flexDirection: 'row'}}>
             <div className={projectStyles.project__image} data-aos={truefalse(index) ?"fade-left": "fade-right"}>
               <Img sizes={edges.node.image.sizes} style={{height:'60vh'}}> </Img>
             </div>

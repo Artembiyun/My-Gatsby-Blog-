@@ -2,18 +2,19 @@ import React from "react"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
+import ReactGA from 'react-ga';
 import blogpost from "../styles/blog-post.module.scss"
 
 const About = (pageQuery) => (
   <Layout>
     <SEO title="About" />
+			{ReactGA.pageview("/about")}
       <div id={blogpost.content}>
         <div id={blogpost.content__main}>
           {pageQuery.data.allContentfulAbout.edges.map((edges) =>
             <div id={blogpost.about}>
                 <div className={blogpost['about-box']}>
-                    <Img sizes={edges.node.headerImage.sizes} style={{width:'300px', borderRadius: '200px'}}/>
+                    <Img sizes={edges.node.headerImage.sizes} className={blogpost.aboutImage}/>
                   <div className={blogpost['about-box__header-container']}>
                     <h3 style={{color: 'black'}}>
                       E: artembiyun@live.ca                

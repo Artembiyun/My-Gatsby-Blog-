@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
+import ReactGA from 'react-ga';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import blogpost from "../styles/blog-post.module.scss"
@@ -33,6 +34,7 @@ class Blogpage extends Component {
   return(
     <Layout>
       <SEO title="Blog" />
+      {ReactGA.pageview("/articles")}
       <div id={blogpost.content}>
         <div id={blogpost.content__main}>
           {this.props.data.allContentfulBlog.edges.map((edges) =>

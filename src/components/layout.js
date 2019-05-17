@@ -10,7 +10,6 @@ import img5 from "../images/backgroundImages/image8.jpg"
 import img6 from "../images/backgroundImages/image1.jpg"
 import img7 from "../images/backgroundImages/image10.jpg"
 
-import header from "../styles/header.module.scss";
 import Header from "./header"
 require ('../styles/layout.scss')
 

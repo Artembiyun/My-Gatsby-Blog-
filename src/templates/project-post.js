@@ -5,7 +5,6 @@ import SEO from "../components/seo";
 import blogpost from "../styles/blog-post.module.scss";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
-import { ENGINE_METHOD_DIGESTS } from "constants";
 
 const options = {
   renderNode: {
@@ -31,7 +30,6 @@ class project extends Component {
   render() {
     const {
       title,
-      createdAt,
       image,
       gitHub
     } = this.props.data.contentfulProjects;
@@ -58,9 +56,9 @@ class project extends Component {
                 <a className={blogpost.git} href={gitHub}>
                   Git Repo
                 </a>
-                <a className={blogpost.live}>
+                <div className={blogpost.live}>
                   Live version(coming soon)
-                </a>
+                </div>
               </div>
               <div className={blogpost.contentBox}>
                 {documentToReactComponents(

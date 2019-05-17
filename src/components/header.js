@@ -2,7 +2,6 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 import Scroll from "../components/smoothscroll";
-import Cards from "../components/cards";
 import Typist from "react-typist";
 import header from "../styles/header.module.scss";
 require("../styles/header.module.scss");

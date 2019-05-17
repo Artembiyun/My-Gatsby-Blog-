@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import {Link, animateScroll as scroll } from "react-scroll";
+import {Link} from "react-scroll";
 import header from "../styles/header.module.scss";
 
 class smoothscroll extends Component {
@@ -11,7 +10,7 @@ class smoothscroll extends Component {
                 smooth={true}
                 duration={500}
             >
-            <div class={header.arrow}></div>
+            <div className={header.arrow}></div>
             </Link>
         );
     }
