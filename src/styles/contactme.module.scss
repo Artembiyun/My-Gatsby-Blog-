@@ -3,7 +3,7 @@
     max-width: 800px;
     display: grid;
     grid-template-columns: 60vw 40vw;
-    background-color: #dfeced;
+
 }
 
 .aboutImage{
@@ -12,6 +12,7 @@
 }
 
 .about-box{
+    background-color: #dfeced;
     display: flex;
     flex-direction: row;
     align-items: center;
