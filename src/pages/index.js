@@ -38,7 +38,7 @@ class IndexPage extends Component {
         <Bio />
         <Projects projects={this.props.data} />
         <Skills />
-        <ContactMe />
+        <ContactMe about={this.props.data.allContentfulAbout} />
       </Layout>
     );
   }
@@ -62,6 +62,25 @@ export const ProjectQuery = graphql`
           }
           image {
             sizes(maxWidth: 2000) {
+              ...GatsbyContentfulSizes
+            }
+          }
+        }
+      }
+    }
+    allContentfulAbout {
+      edges {
+        node {
+          id
+          title
+          slug
+          content {
+            childMarkdownRemark {
+              html
+            }
+          }
+          headerImage {
+            sizes(maxWidth: 400) {
               ...GatsbyContentfulSizes
             }
           }
