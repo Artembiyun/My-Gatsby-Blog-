@@ -5,12 +5,12 @@ import Bio from "../components/bio";
 import Projects from "../components/projects";
 import Skills from "../components/skills";
 import ContactMe from "../components/contactme";
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
+import { graphql } from "gatsby";
 
 import "aos/dist/aos.css";
 
 class IndexPage extends Component {
-
   componentDidMount() {
     this.initializeReactGA();
     const AOS = require("aos");
@@ -26,9 +26,9 @@ class IndexPage extends Component {
     this.aos.refresh();
   }
 
-   initializeReactGA() {
-    ReactGA.initialize('UA-140382259-1');
-    ReactGA.pageview('/homepage');
+  initializeReactGA() {
+    ReactGA.initialize("UA-140382259-1");
+    ReactGA.pageview("/homepage");
   }
 
   render() {
@@ -45,34 +45,6 @@ class IndexPage extends Component {
 }
 
 export default IndexPage;
-
-// export const pageQuery = graphql`
-//     query pageQuery {
-//         allContentfulBlog(
-//             limit: 6
-//             filter: {
-//                 node_locale: {eq: "en-US"}
-//             },
-//             sort: {
-//                 fields: [createdAt], order: DESC
-//             }
-//         ) {
-//             edges {
-//                 node {
-//                     id
-//                     title
-//                     slug
-//                     createdAt(formatString: "MMMM DD, YYYY")
-//                     featuredImage {
-//                         sizes(maxWidth: 400) {
-//                             ...GatsbyContentfulSizes
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// `
 
 export const ProjectQuery = graphql`
   query ProjectQuery {
