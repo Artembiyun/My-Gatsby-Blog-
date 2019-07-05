@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Artem Biyun`,
+    title: `Kathryn Lovell`,
     description: `Little Site for Big Ideas`,
-    author: `Artem Biyun`
+    author: `Kathryn Lovell`
   },
   plugins: [
     {

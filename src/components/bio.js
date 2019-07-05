@@ -6,16 +6,12 @@ class bio extends Component {
     return (
       <div className={bioStyle.bioMain} id="bio">
         <div className={bioStyle.textHolder} data-aos="fade-up-right">
-          <h1>Building it better, faster, stronger ect. </h1>
+          <h1>I'm Kat, an engineer in NYC.</h1>
         </div>
         <div className={bioStyle.vl} />
         <div className={bioStyle.hl} />
         <div className={bioStyle.textHolder} data-aos="fade-up-left">
-          <h2>
-            Hi, I'm Artem Biyun, a web developer in Toronto Ontario. I like
-            React and building full stack apps out of all kinds of interesting
-            tools
-          </h2>
+          <h2>Coordinating where Art, Science & Craft meet.</h2>
         </div>
       </div>
     );
