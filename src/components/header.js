@@ -6,10 +6,9 @@ import Typist from "react-typist";
 import header from "../styles/header.module.scss";
 require("../styles/header.module.scss");
 
-
-function randomQuote(){
-let Quotes = ["Web Developer"]
-  let i = Math.floor(Math.random()*Quotes.length);
+function randomQuote() {
+  let Quotes = ["Web Developer"];
+  let i = Math.floor(Math.random() * Quotes.length);
   return Quotes[i];
 }
 
@@ -70,8 +69,10 @@ const Header = ({ siteTitle, indexLayout, props }) => (
     <div id={header.angle} />
     {indexLayout ? (
       <div className={header.indexTopBox}>
-        <div style={{width:'100vw', display:'flex', justifyContent:'center'}}>
-        <Scroll/>
+        <div
+          style={{ width: "100vw", display: "flex", justifyContent: "center" }}
+        >
+          <Scroll />
         </div>
         {headerbox({ siteTitle, indexLayout })}
         {menubox({ indexLayout })}
