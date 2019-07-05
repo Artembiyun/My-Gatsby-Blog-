@@ -15,10 +15,10 @@
             justify-self: right;
         }
         h1 {
+            margin: 2rem;
             display: flex;
-            justify-content: left;
-            align-items: left;
-            text-align: left;
+            align-self: left;
+            vertical-align: center;
         }
     }
 }
