@@ -2,20 +2,17 @@
     position: relative;
     width: 100vw;
     height: 60vh;
-    display: flex;
+    display: grid;
+    grid-template-columns: 60vw 40vw;
     background-color: #ECECEC;
 
-    &__image{
-        width: 60vw;
-    }
-
-    &__text{
+    &_text{
+        border-left: 2px solid #0e7680;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        width: 40vw;
         background-color: #ECECEC;
     }
 }

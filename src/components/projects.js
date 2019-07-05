@@ -5,40 +5,24 @@ import Img from "gatsby-image";
 
 class projects extends Component {
   render() {
-    function truefalse(i) {
-      let even = i % 2;
-      if (even === 0) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-
     return (
       <div>
-        <h1 className={projectStyles.title}>My Projects</h1>
+        <div className={projectStyles.project}>
+          <h1 className={projectStyles.title}>My Projects</h1>
+          <div />
+        </div>
         {this.props.projects.allContentfulProjects.edges.map((edges, index) => (
           <Link to={edges.node.slug} key={index}>
-            <div
-              className={projectStyles.project}
-              style={
-                truefalse(index)
-                  ? { flexDirection: "row-reverse" }
-                  : { flexDirection: "row" }
-              }
-            >
+            <div className={projectStyles.project}>
               <div
-                className={projectStyles.project__image}
-                data-aos={truefalse(index) ? "fade-left" : "fade-right"}
+                className={projectStyles.project_image}
+                data-aos="fade-bottom"
               >
                 <Img sizes={edges.node.image.sizes} style={{ height: "60vh" }}>
                   {" "}
                 </Img>
               </div>
-              <div
-                className={projectStyles.project__text}
-                data-aos={truefalse(index) ? "fade-right" : "fade-left"}
-              >
+              <div className={projectStyles.project_text}>
                 <h1 style={{ maxWidth: "600px" }}>{edges.node.title}</h1>
                 <h2>{edges.node.subHeading}</h2>
               </div>
