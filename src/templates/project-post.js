@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -28,11 +29,7 @@ const options = {
 
 class project extends Component {
   render() {
-    const {
-      title,
-      image,
-      gitHub
-    } = this.props.data.contentfulProjects;
+    const { title, image, gitHub } = this.props.data.contentfulProjects;
     return (
       <Layout minlayout={true}>
         <SEO title="Projects" />
@@ -56,9 +53,7 @@ class project extends Component {
                 <a className={blogpost.git} href={gitHub}>
                   Git Repo
                 </a>
-                <div className={blogpost.live}>
-                  Live version(coming soon)
-                </div>
+                <div className={blogpost.live}>Live version(coming soon)</div>
               </div>
               <div className={blogpost.contentBox}>
                 {documentToReactComponents(

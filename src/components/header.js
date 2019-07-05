@@ -6,10 +6,9 @@ import Typist from "react-typist";
 import header from "../styles/header.module.scss";
 require("../styles/header.module.scss");
 
-
-function randomQuote(){
-let Quotes = ["Web Developer"]
-  let i = Math.floor(Math.random()*Quotes.length);
+function randomQuote() {
+  let Quotes = ["Web Developer"];
+  let i = Math.floor(Math.random() * Quotes.length);
   return Quotes[i];
 }
 
@@ -42,25 +41,19 @@ const headerbox = ({ siteTitle, indexLayout }) => (
 const menubox = ({ indexLayout }) => (
   <div className={indexLayout ? header.indexMenubox : header.menubox}>
     <div className={header.menubox__item}>
-      <h3>
-        <Link to="/projects-page" className="white">
-          Projects
-        </Link>
-      </h3>
+      <Link to="/projects-page" className="white">
+        <h3>Projects</h3>
+      </Link>
     </div>
     <div className={header.menubox__item}>
-      <h3>
-        <Link to="/articles" className="white">
-          Blog
-        </Link>
-      </h3>
+      <Link to="/articles" className="white">
+        <h3>Blog</h3>
+      </Link>
     </div>
     <div className={header.menubox__item}>
-      <h3>
-        <Link to="/about" className="white">
-          About
-        </Link>
-      </h3>
+      <Link to="/about" className="white">
+        <h3>About</h3>
+      </Link>
     </div>
   </div>
 );
@@ -70,8 +63,10 @@ const Header = ({ siteTitle, indexLayout, props }) => (
     <div id={header.angle} />
     {indexLayout ? (
       <div className={header.indexTopBox}>
-        <div style={{width:'100vw', display:'flex', justifyContent:'center'}}>
-        <Scroll/>
+        <div
+          style={{ width: "100vw", display: "flex", justifyContent: "center" }}
+        >
+          <Scroll />
         </div>
         {headerbox({ siteTitle, indexLayout })}
         {menubox({ indexLayout })}
