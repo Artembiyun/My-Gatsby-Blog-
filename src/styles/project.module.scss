@@ -4,7 +4,7 @@
     height: 60vh;
     display: grid;
     grid-template-columns: 60vw 40vw;
-    background-color: #ECECEC;
+    background-color: #dfeced;
 
     &_text{
         border-left: 2px solid #0e7680;
@@ -13,13 +13,13 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        background-color: #ECECEC;
+        background-color: #dfeced;
     }
 }
 
 .title{
     text-align: center;
-    background-color: #ECECEC;
+    background-color: #dfeced;
     padding: 60px;
 }
 
