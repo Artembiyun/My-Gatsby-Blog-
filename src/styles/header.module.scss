@@ -71,11 +71,8 @@ a{
 
 .indexMainTitleBox{
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100vw;
+    margin-left: 20px;
 }
 
 .indexSidebar{
@@ -97,7 +94,6 @@ a{
 }
 
 .indexSubheading{
-    justify-content:center;
     width: 300px;
     height: 120px;
 }
@@ -129,10 +125,8 @@ a{
 .indexTopBox{
     position: absolute;
     top: 0px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column-reverse;
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns: 60vw 40vw;
     width: 100vw;
     height: 90vh;
 }

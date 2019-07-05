@@ -46,11 +46,6 @@ const menubox = ({ indexLayout }) => (
       </Link>
     </div>
     <div className={header.menubox__item}>
-      <Link to="/articles" className="white">
-        <h3>Blog</h3>
-      </Link>
-    </div>
-    <div className={header.menubox__item}>
       <Link to="/about" className="white">
         <h3>About</h3>
       </Link>
@@ -68,8 +63,8 @@ const Header = ({ siteTitle, indexLayout, props }) => (
         >
           <Scroll />
         </div>
-        {headerbox({ siteTitle, indexLayout })}
         {menubox({ indexLayout })}
+        {headerbox({ siteTitle, indexLayout })}
       </div>
     ) : (
       <>

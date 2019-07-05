@@ -3,7 +3,8 @@
     width: 100vw;
     height: 100vh;
     background-color: #ECECEC;
-    display:flex;
+    display: grid;
+    grid-template-columns: 60vw 40vw;
     align-items: center;
     justify-content: center;
 }
@@ -11,12 +12,6 @@
 .textHolder{
     margin-left: 10px;
     max-width: 600px;
-}
-
-.vl{
-    border-left: 2px solid rgb(112, 112, 112);
-    height: 300px;
-    margin: 40px;
 }
 
 @media(max-width: 1000px){
