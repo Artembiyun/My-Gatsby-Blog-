@@ -18,6 +18,16 @@ body{
     overflow-x: hidden;
 }
 
+Header:after {
+    content: "";
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    bottom: 0;
+    left: 60vw;
+    border-left: 2px solid #0e7680;
+}
+
 a{
     color: black;
     text-decoration: none;
