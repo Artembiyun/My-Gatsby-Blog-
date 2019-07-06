@@ -10,7 +10,9 @@ class projects extends Component {
       <div id="projects">
         <div className={projectStyles.title}>
           <h1>My Projects</h1>
-          <Scroll to="projects" />
+          <div style={{ position: "absolute", left: "50vw" }}>
+            <Scroll to="projects" />
+          </div>
         </div>
         {this.props.projects.allContentfulProjects.edges.map((edges, index) => (
           <Link to={edges.node.slug} key={index}>
