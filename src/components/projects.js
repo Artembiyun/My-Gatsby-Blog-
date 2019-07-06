@@ -2,14 +2,15 @@ import { Link } from "gatsby";
 import React, { Component } from "react";
 import projectStyles from "../styles/project.module.scss";
 import Img from "gatsby-image";
+import Scroll from "../components/smoothscroll";
 
 class projects extends Component {
   render() {
     return (
-      <div>
-        <div className={projectStyles.project}>
-          <h1 className={projectStyles.title}>My Projects</h1>
-          <div />
+      <div id="projects">
+        <div className={projectStyles.title}>
+          <h1>My Projects</h1>
+          <Scroll to="projects" />
         </div>
         {this.props.projects.allContentfulProjects.edges.map((edges, index) => (
           <Link to={edges.node.slug} key={index}>

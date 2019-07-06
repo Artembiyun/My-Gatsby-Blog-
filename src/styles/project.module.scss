@@ -5,7 +5,6 @@
     display: grid;
     grid-template-columns: 60vw 40vw;
     background-color: #dfeced;
-
     &_text{
         border-left: 2px solid #0e7680;
         display: flex;
@@ -18,9 +17,15 @@
 }
 
 .title{
-    left: 60vw;
+    display: flex;
     background-color: #dfeced;
-    padding: 60px;
+    align-items: center;
+    width: 100vw;
+    height: 20vh;
+    a{
+        position: absolute;
+        left: 50vw;
+    }
 }
 
 @media(max-width: 1000px){

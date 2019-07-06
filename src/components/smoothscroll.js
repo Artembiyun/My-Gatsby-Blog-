@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-scroll";
 import header from "../styles/header.module.scss";
 
@@ -7,7 +8,7 @@ class smoothscroll extends Component {
     return (
       <Link
         data-scroll
-        to="bio"
+        to={this.props.to}
         spy={true}
         smooth={true}
         duration={500}
@@ -19,6 +20,12 @@ class smoothscroll extends Component {
   }
 }
 
-smoothscroll.propTypes = {};
+smoothscroll.propTypes = {
+  to: PropTypes.string
+};
+
+smoothscroll.defaultProps = {
+  to: `bio`
+};
 
 export default smoothscroll;

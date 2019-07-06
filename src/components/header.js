@@ -62,7 +62,7 @@ const Header = ({ siteTitle, indexLayout, props }) => (
     </div>
     {headerbox({ siteTitle, indexLayout })}
     <div style={{ width: "100vw", display: "flex", justifyContent: "center" }}>
-      <Scroll />
+      <Scroll to="bio" />
     </div>
   </header>
 );
