@@ -17,7 +17,7 @@ class contactme extends Component {
                 <h3 style={{ color: "black" }}>E: krlovell017 at gmail</h3>
                 <h3 style={{ color: "black" }}>P: 718~578~5005</h3>
                 <div className={blogpost.socmedia}>
-                  <a href="https://www.instagram.com/artembiyun/">
+                  <a href="https://www.instagram.com/kalendulacy/">
                     <img
                       src={require("../images/icons/instagram-icon.svg")}
                       alt="Instagram Icon"
