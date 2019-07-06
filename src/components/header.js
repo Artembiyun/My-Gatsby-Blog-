@@ -54,24 +54,16 @@ const menubox = ({ indexLayout }) => (
 );
 
 const Header = ({ siteTitle, indexLayout, props }) => (
-  <header className={indexLayout ? header.indexSidebar : header.sidebar}>
+  <header className={header.indexSidebar}>
     <div id={header.angle} />
-    {indexLayout ? (
-      <div className={header.indexTopBox}>
-        <div
-          style={{ width: "100vw", display: "flex", justifyContent: "center" }}
-        >
-          <Scroll />
-        </div>
-        {menubox({ indexLayout })}
-        {headerbox({ siteTitle, indexLayout })}
-      </div>
-    ) : (
-      <>
-        {headerbox({ siteTitle, indexLayout })}
-        {menubox({ indexLayout })}
-      </>
-    )}
+    <div className={header.indexTopBox}>
+      <div className={header.gobo} />
+      {menubox({ indexLayout })}
+    </div>
+    {headerbox({ siteTitle, indexLayout })}
+    <div style={{ width: "100vw", display: "flex", justifyContent: "center" }}>
+      <Scroll />
+    </div>
   </header>
 );
 
