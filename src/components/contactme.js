@@ -15,21 +15,15 @@ class contactme extends Component {
             <div id={blogpost.about}>
               <div className={blogpost["about-box__header-container"]}>
                 <h3 style={{ color: "black" }}>E: krlovell017 at gmail</h3>
-                <h3 style={{ color: "black" }}>P: 718-578-5005</h3>
+                <h3 style={{ color: "black" }}>P: 718~578~5005</h3>
                 <div className={blogpost.socmedia}>
-                  <a href="https://www.facebook.com/profile.php?id=100008391877805">
-                    <img
-                      src={require("../images/icons/fb-icon.svg")}
-                      alt="FaceBook Icon"
-                    />
-                  </a>
                   <a href="https://www.instagram.com/artembiyun/">
                     <img
                       src={require("../images/icons/instagram-icon.svg")}
                       alt="Instagram Icon"
                     />
                   </a>
-                  <a href="https://www.linkedin.com/in/artembiyun/">
+                  <a href="https://www.linkedin.com/in/kathryn-lovell-688845112/">
                     <img
                       src={require("../images/icons/linkedin-icon.svg")}
                       alt="Linkedin Profile"
