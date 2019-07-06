@@ -20,20 +20,20 @@ function randomQuote() {
 const headerbox = ({ siteTitle, indexLayout }) => (
   <div className={indexLayout ? header.indexMainTitleBox : ""}>
     <div className={indexLayout ? header.indexTitle : header.title}>
-      <h2 className={indexLayout ? header.indexTitleText : " "}>
+      <h1 className={indexLayout ? header.indexTitleText : " "}>
         <Link to="/" className="white">
           {siteTitle}
         </Link>
-      </h2>
+      </h1>
     </div>
     <div className={indexLayout ? header.indexSubheading : header.subheading}>
       {indexLayout ? (
-        <h3 style={{ color: "white", fontSize: "2em" }}>
+        <h3 style={{ color: "white", fontSize: "2em", fontFamily: "Playfair" }}>
           <Typist avgTypingSpeed={1}>{randomQuote()}</Typist>
         </h3>
       ) : (
         <h3 style={{ color: "white", fontSize: "1rem" }}>
-          <Typist>
+          <Typist style={{ fontFamily: "Playfair" }}>
             Web Dev Blog <br />
             For the Future!
           </Typist>

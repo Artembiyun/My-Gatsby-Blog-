@@ -4,8 +4,15 @@
 }
 
 @font-face{
-    font-family: 'Rubik', sans-serif;
-    src: url('https://fonts.googleapis.com/css?family=Open+Sans|Rubik');
+    font-family: 'Playfair';
+    font-style: normal;
+    src: url(fonts/PlayfairDisplay-Regular.ttf);
+}
+
+@font-face{
+    font-family: 'Playfair';
+    font-style: italic;
+    src: url(fonts/PlayfairDisplay-Italic.ttf);
 }
 
 body{
@@ -37,6 +44,8 @@ a{
 }
 
 h1{
+    font-family: 'Futura';
+    letter-spacing: .4rem;
     font-size: 4rem;
     font-weight: lighter;
     padding-bottom: 5px;
@@ -44,6 +53,7 @@ h1{
 }
 
 h2{
+    font-family: 'Playfair';
     margin: 0;
     font-size: 3rem;
     font-weight: lighter;

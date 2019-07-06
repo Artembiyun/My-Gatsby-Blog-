@@ -101,6 +101,7 @@ class skills extends Component {
               data-aos-easing="linear"
               data-aos-duration="5000"
               data-aos-delay="300"
+              style={{ fontFamily: "Playfair" }}
             >
               & Love
             </h1>
