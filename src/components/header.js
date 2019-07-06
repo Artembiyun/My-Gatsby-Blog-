@@ -7,7 +7,12 @@ import header from "../styles/header.module.scss";
 require("../styles/header.module.scss");
 
 function randomQuote() {
-  let Quotes = ["Web Developer"];
+  let Quotes = [
+    "Web Developer",
+    "Now if only I could scent it, it would really give that something extra.",
+    "'Alexa, tell me my daily 2 Chainz quote.'",
+    "I got optional dependencies to work once in poetry."
+  ];
   let i = Math.floor(Math.random() * Quotes.length);
   return Quotes[i];
 }
@@ -23,11 +28,11 @@ const headerbox = ({ siteTitle, indexLayout }) => (
     </div>
     <div className={indexLayout ? header.indexSubheading : header.subheading}>
       {indexLayout ? (
-        <h3 style={{ color: "white" }}>
+        <h3 style={{ color: "white", fontSize: "2em" }}>
           <Typist avgTypingSpeed={1}>{randomQuote()}</Typist>
         </h3>
       ) : (
-        <h3 style={{ color: "white", fontSize: "1.2rem" }}>
+        <h3 style={{ color: "white", fontSize: "1rem" }}>
           <Typist>
             Web Dev Blog <br />
             For the Future!
