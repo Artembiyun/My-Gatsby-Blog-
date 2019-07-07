@@ -40,11 +40,11 @@
   ],
   "license": "MIT",
   "scripts": {
-    "dev": "gatsby develop",
     "build": "gatsby build",
-    "heroku-postbuild": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
     "serve": "gatsby serve",
-    "setup": "npm install --no-save contentful-import yargs-parser axios chalk && node ./setup.js"
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "repository": {
     "type": "git",
