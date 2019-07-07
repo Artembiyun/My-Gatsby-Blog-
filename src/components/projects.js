@@ -14,7 +14,7 @@ class projects extends Component {
             <Scroll to="projects" />
           </div>
         </div>
-        {this.props.projects.allContentfulProjects.edges.map((edges, index) => (
+        {this.props.projects.allContentfulBlogPost.edges.map((edges, index) => (
           <Link to={edges.node.slug} key={index}>
             <div className={projectStyles.project}>
               <div

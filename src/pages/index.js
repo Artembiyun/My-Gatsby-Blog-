@@ -38,7 +38,7 @@ class IndexPage extends Component {
         <Bio />
         <Projects projects={this.props.data} />
         <Skills />
-        <ContactMe about={this.props.data.allContentfulAbout} />
+        <ContactMe about={this.props.data.allContentfulPerson} />
       </Layout>
     );
   }
@@ -48,38 +48,32 @@ export default IndexPage;
 
 export const ProjectQuery = graphql`
   query ProjectQuery {
-    allContentfulProjects(sort: { fields: [index], order: ASC }) {
+    allContentfulBlogPost(sort: { fields: [publishDate], order: ASC }) {
       edges {
         node {
           id
-          title
-          gitHub
           slug
-          subHeading
-          index
-          content {
-            json
-          }
-          image {
-            sizes(maxWidth: 2000) {
+          title
+          subTitle
+          heroImage {
+            sizes(maxWidth: 450) {
               ...GatsbyContentfulSizes
             }
           }
+          publishDate
+          bodyText {
+            json
+          }
+          tags
         }
       }
     }
-    allContentfulAbout {
+    allContentfulPerson {
       edges {
         node {
           id
           title
-          slug
-          content {
-            childMarkdownRemark {
-              html
-            }
-          }
-          headerImage {
+          image {
             sizes(maxWidth: 400) {
               ...GatsbyContentfulSizes
             }

@@ -32,7 +32,7 @@ class contactme extends Component {
                 </div>
               </div>
               <Img
-                sizes={edges.node.headerImage.sizes}
+                sizes={edges.node.image.sizes}
                 className={blogpost.aboutImage}
               />
             </div>

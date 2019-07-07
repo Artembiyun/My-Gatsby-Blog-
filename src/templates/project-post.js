@@ -29,7 +29,7 @@ const options = {
 
 class project extends Component {
   render() {
-    const { title, image, gitHub } = this.props.data.contentfulProjects;
+    const { title, image, gitHub } = this.props.data.contentfulBlogPost;
     return (
       <Layout minlayout={true}>
         <SEO title="Projects" />
@@ -57,7 +57,7 @@ class project extends Component {
               </div>
               <div className={blogpost.contentBox}>
                 {documentToReactComponents(
-                  this.props.data.contentfulProjects.content.json,
+                  this.props.data.contentfulBlogPost.content.json,
                   options
                 )}
               </div>
@@ -73,16 +73,15 @@ export default project;
 
 export const ProjectpageQuery = graphql`
   query ProjectPageQuery($slug: String!) {
-    contentfulProjects(slug: { eq: $slug }) {
+    contentfulBlogPost(slug: { eq: $slug }) {
       title
-      gitHub
       createdAt(formatString: "MMMM DD, YYYY")
-      image {
+      heroImage {
         sizes(maxWidth: 1000) {
           ...GatsbyContentfulSizes
         }
       }
-      content {
+      bodyText {
         json
       }
     }

@@ -29,7 +29,7 @@ const options = {
 
 class BlogPost extends Component {
   render() {
-    const { title, createdAt, featuredImage } = this.props.data.contentfulBlog;
+    const { title, createdAt, heroImage } = this.props.data.contentfulBlog;
     return (
       <Layout minlayout={true}>
         <SEO title="Blog" />
@@ -37,7 +37,7 @@ class BlogPost extends Component {
           <div id={blogpost.content__main}>
             <div id={blogpost.content__main__centered}>
               <div className={blogpost.imageBox}>
-                <Img sizes={featuredImage.sizes} />
+                <Img sizes={heroImage.sizes} />
               </div>
               <h2
                 style={{
@@ -72,7 +72,7 @@ export const pageQuery = graphql`
     contentfulBlog(slug: { eq: $slug }) {
       title
       createdAt(formatString: "MMMM DD, YYYY")
-      featuredImage {
+      heroImage {
         sizes(maxWidth: 1000) {
           ...GatsbyContentfulSizes
         }
